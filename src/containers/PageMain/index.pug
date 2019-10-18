@@ -1,0 +1,229 @@
+extends /containers/layout
+
+block variables
+
+block content
+
+  div.page-main.js-main-page
+    .banner
+      .banner__swiper_left.js-banner-swiper
+        .swiper-wrapper
+            -
+              var slides = [
+                "bannerIMG1",
+                "bannerIMG2",
+                "bannerIMG3",
+                "bannerIMG4"
+              ]
+            each slide in slides
+              .swiper-slide
+                .swiper-slide__image(style="background-image: url('"+ assetsDir +  "images/" + slide +".png')")
+                  img(src=assetsDir + "images/" + slide + ".png", hidden)
+                h4.swiper-slide__text Стейк из семги с гарниром на Ваш выбор
+        .swiper__controler
+          .swiper-button-next.js-next-slide
+            svg
+              use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+          .swiper-button-prev.js-prev-slide
+            svg
+              use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+      .banner__swiper_right.js-banner-swiper
+        .swiper-wrapper
+          -
+            var slides = [
+              "bannerIMG1",
+              "bannerIMG2",
+              "bannerIMG3",
+              "bannerIMG4"
+            ]
+          each slide in slides
+            .swiper-slide
+              .swiper-slide__image(style="background-image: url('" + assetsDir + "images/" + slide + ".png')")
+                img(src=assetsDir + "images/" + slide + ".png", hidden)
+              h4.swiper-slide__text
+                span Стейк из семги с гарниром на Ваш выбор
+        .swiper__controler
+          .swiper-button-next.js-next-slide
+            svg
+              use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+          .swiper-button-prev.js-prev-slide
+            svg
+              use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+    .page-main__menu
+      .menu
+        p.menu__vertical
+          | меню
+        .menu__info
+          .menu__title
+            span.menu__title-background
+              | Меню
+            span.menu__title-text
+              | Меню
+          .menu__subtitle
+            | Это меню создано специально для вас
+          .menu__description
+            | В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая.
+          ul.menu__links
+            -
+              var links = [
+                {
+                  url: "/",
+                  text: "Завтраки"
+                },
+                {
+                  url: "/",
+                  text: "Деловые обеды"
+                },
+                {
+                url: "/",
+                text: "Основные блюда"
+                },
+                {
+                url: "/",
+                text: "Десерты"
+                },
+                {
+                url: "/",
+                text: "Напитки"
+                }
+              ]
+            each link in links
+              li.menu__links-item
+                a(href= link.url)= link.text
+        .menu__images.js-horizontal-swiper
+          .swiper-wrapper
+            -
+              var images = [
+                {
+                  img: "mainMenuIMG1",
+                  text: "Стейк из молочной телятины с соусом из молодого шпината",
+                },
+                {
+                  img: "mainMenuIMG2",
+                  text: "Стейк из молочной телятины с соусом из молодого шпината",
+                },
+                {
+                  img: "mainMenuIMG3",
+                  text: "Стейк из молочной телятины с соусом из молодого шпината",
+                },
+                {
+                  img: "mainMenuIMG4",
+                  text: "Стейк из молочной телятины с соусом из молодого шпината",
+                },
+                {
+                  img: "mainMenuIMG1",
+                  text: "Стейк из молочной телятины с соусом из молодого шпината",
+                },
+                {
+                  img: "mainMenuIMG2",
+                  text: "Стейк из молочной телятины с соусом из молодого шпината",
+                },
+                {
+                  img: "mainMenuIMG3",
+                  text: "Стейк из молочной телятины с соусом из молодого шпината",
+                },
+                {
+                  img: "mainMenuIMG4",
+                  text: "Стейк из молочной телятины с соусом из молодого шпината",
+                }
+              ]
+            each image in images
+              .menu__images-item.swiper-slide(style="background-image: url('" + assetsDir + "images/" + image.img + ".png')")
+                p.menu__images-text
+                  span= image.text
+          .menu__images__controls
+            .menu__images__prev-btn.js-prev-slide
+              svg
+                use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+            .menu__images__next-btn.js-next-slide
+              svg
+                use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+    .page-main__events
+      .events
+        .events__header
+          h4.events__header__title
+            | 2019
+          .events__dots
+            -
+              var dots = ["Апрель", "Мая", "Июнь"]
+            each dot in dots
+              .dot
+                h5.dot__title= dot
+                span.dot__circle
+          .events__more
+            svg
+              use(xlink:href=assetsDir + "images/sprite.symbol.svg#arrow_long")
+        .events__body
+          .events__slider.js-singl-swiper_horizontal
+            .swiper-wrapper
+              -
+                var slides = [
+                  {
+                    img: "eventsIMG1",
+                    text: '"Игра Головой" 22.10'
+                  },
+                  {
+                    img: "eventsIMG1",
+                    text: '"Игра Головой" 22.10'
+                  },
+                  {
+                    img: "eventsIMG1",
+                    text: '"Игра Головой" 22.10'
+                  },
+                  {
+                    img: "eventsIMG1",
+                    text: '"Игра Головой" 22.10'
+                  }
+                ]
+              each slide in slides
+                .swiper-slide.events__slider__slide(style="background-image: url('" + assetsDir + "images/" + slide.img + ".png')")
+                  span.events__slider__slide-text= slide.text
+                  img(src= assetsDir + "images/" + slide.img + ".png", hidden)
+            .events__slider__control
+              .events__slider__prev.js-prev-slide
+                svg
+                  use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+              .events__slider__next.js-next-slide
+                svg
+                  use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+          .events__info
+            .events__title
+              span.events__title-background
+                | Мероприятия
+              span.events__title-text
+                | Мероприятия
+            .events__subtitle
+              | Мы предлагаем Вам провести у нас время всей семьей
+            .events__description
+              | В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая. Также вы можете заказать у нас торт или приобрести подарочные сертификаты.
+            a.events__link(href="/") Подробнее
+          p.events__vertical
+            | Мероприятия
+    .reserve.page-main__reserve
+      h3.reserv__title.page-main__reserve__title
+        | Лучше один раз попробовать, чем много раз говорить.
+      button.button.resrve__btn.page-main__reserve__btn
+        span.text
+          | Забронировать
+    .page-main__about
+      .about
+        .about__header
+          h3.about__header__title
+           | О нас
+          p.about__subtitle
+            | В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая.
+        .about__body
+          .about__img(style="background-image: url('" + assetsDir + "images/aboutIMG.png')")
+            img(src=assetsDir + "images/aboutIMG.png", hidden)
+          .about__info
+            .about__title
+              span.about__title-background
+                | О нас
+              span.about__title-text
+            .about__subtitle
+              | Мы предлагаем Вам провести у нас время всей семьей
+            .about__description
+              | В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая. Также вы можете заказать у нас торт или приобрести подарочные сертификаты.
+            a.about__link(href="/") Подробнее
+          p.about__vertical
+            | О нас

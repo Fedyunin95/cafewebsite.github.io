@@ -1,0 +1,62 @@
+footer.footer
+    .footer__wrapper
+        .footer__nav-block
+            .footer__logo.logo
+                div.header__logo__icon.logo__icon
+                p.header__logo__text.logo__text
+                    | Leto
+            ul.footer__nav
+                -
+                    var links = [
+                        {
+                            url: "/",
+                            text: "меню",
+                        },
+                        {
+                            url: "/",
+                            text: "о нас",
+                        },
+                        {
+                            url: "/",
+                            text: "мероприятия",
+                        },
+                        {
+                            url: "/",
+                            text: "отзывы",
+                        },
+                        {
+                            url: "/",
+                            text: "галерея",
+                        },
+                        {
+                            url: "/",
+                            text: "контакты",
+                        },
+                    ]
+                each link in links
+                    li.footer__nav-link
+                        a(href= link.url)= link.text
+            p.footer__copyright
+                | Copyright © 2019
+        .footer__social
+            .social-links
+                -
+                    var links = [
+                        {
+                            url: "/",
+                            icon: "VK"
+                        },
+                        {
+                            url: "/",
+                            icon: "insta"
+                        },
+                        {
+                            url: "/",
+                            icon: "facebook"
+                        }
+                    ]
+                each link in links
+                    .social-links__link
+                        a(href= link.url)
+                            svg
+                                use(xlink:href=assetsDir + "images/sprite.symbol.svg#" + link.icon)
