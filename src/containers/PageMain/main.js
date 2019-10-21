@@ -4,6 +4,7 @@ function mainPage(page) {
   const bannerSliders = page.querySelectorAll(".js-banner-swiper");
   const horizontalSliders = page.querySelectorAll(".js-horizontal-swiper");
   const eventsSliders = page.querySelectorAll(".js-singl-swiper_horizontal");
+  const teamSlider = page.querySelector(".js-team-swiper");
   let bannerSwiper;
 
   for (let i = 0, len = bannerSliders.length; i < len; i++) {
@@ -48,6 +49,18 @@ function mainPage(page) {
       }
     });
   }
+
+  const nextBtn = teamSlider.querySelector(".js-next-slide");
+  const prevBtn = teamSlider.querySelector(".js-prev-slide");
+  bannerSwiper = new Swiper(teamSlider, {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    navigation: {
+      nextEl: nextBtn,
+      prevEl: prevBtn
+    }
+  });
 }
 
 export default mainPage;

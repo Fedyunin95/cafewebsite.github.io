@@ -53,43 +53,38 @@ block content
       .menu
         p.menu__vertical
           | меню
-        .menu__info
-          .menu__title
-            span.menu__title-background
-              | Меню
-            span.menu__title-text
-              | Меню
-          .menu__subtitle
-            | Это меню создано специально для вас
-          .menu__description
-            | В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая.
-          ul.menu__links
-            -
-              var links = [
-                {
-                  url: "/",
-                  text: "Завтраки"
-                },
-                {
-                  url: "/",
-                  text: "Деловые обеды"
-                },
-                {
+        -
+          var block = {
+            class : "menu",
+            title: "Меню",
+            subtitle: "Это меню создано специально для вас",
+            description: [
+              "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая."
+            ],
+            links : [
+              {
+                url: "/",
+                text: "Завтраки"
+              },
+              {
+                url: "/",
+                text: "Деловые обеды"
+              },
+              {
                 url: "/",
                 text: "Основные блюда"
-                },
-                {
+              },
+              {
                 url: "/",
                 text: "Десерты"
-                },
-                {
+              },
+              {
                 url: "/",
                 text: "Напитки"
-                }
-              ]
-            each link in links
-              li.menu__links-item
-                a(href= link.url)= link.text
+              }
+            ]
+          } 
+        include infoBlock.pug
         .menu__images.js-horizontal-swiper
           .swiper-wrapper
             -
@@ -186,25 +181,27 @@ block content
               .events__slider__next.js-next-slide
                 svg
                   use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
-          .events__info
-            .events__title
-              span.events__title-background
-                | Мероприятия
-              span.events__title-text
-                | Мероприятия
-            .events__subtitle
-              | Мы предлагаем Вам провести у нас время всей семьей
-            .events__description
-              | В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая. Также вы можете заказать у нас торт или приобрести подарочные сертификаты.
-            a.events__link(href="/") Подробнее
+          -
+            var block = {
+              class : "events",
+              title: "Мероприятия",
+              subtitle: "Мы предлагаем Вам провести у нас время всей семьей",
+              description: [
+                "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая. Также вы можете заказать у нас торт или приобрести подарочные сертификаты."
+              ],
+              btn : {
+                href : "/"
+              }
+            } 
+          include infoBlock.pug
           p.events__vertical
             | Мероприятия
-    .reserve.page-main__reserve
-      h3.reserv__title.page-main__reserve__title
-        | Лучше один раз попробовать, чем много раз говорить.
-      button.button.resrve__btn.page-main__reserve__btn
-        span.text
-          | Забронировать
+   
+    -
+      var block = {class: "page-main__reserve"}
+    
+    include /components/Reserve/index
+
     .page-main__about
       .about
         .about__header
@@ -215,15 +212,86 @@ block content
         .about__body
           .about__img(style="background-image: url('" + assetsDir + "images/aboutIMG.png')")
             img(src=assetsDir + "images/aboutIMG.png", hidden)
-          .about__info
-            .about__title
-              span.about__title-background
-                | О нас
-              span.about__title-text
-            .about__subtitle
-              | Мы предлагаем Вам провести у нас время всей семьей
-            .about__description
-              | В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая. Также вы можете заказать у нас торт или приобрести подарочные сертификаты.
-            a.about__link(href="/") Подробнее
+          
+          -
+            var block = {
+              class : "about",
+              title: "О нас",
+              subtitle: "",
+              description: [
+                "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая. Также вы можете заказать у нас торт или приобрести подарочные сертификаты.",
+                "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая."
+              ],
+              btn : {
+                href : "/"
+              }
+            } 
+
+          include infoBlock.pug
+          // .about__info
+          //   .about__title
+          //     span.about__title-background
+          //       | О нас
+          //     span.about__title-text
+          //   .about__subtitle
+          //     | Мы предлагаем Вам провести у нас время всей семьей
+          //   .about__description
+          //     | В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая. Также вы можете заказать у нас торт или приобрести подарочные сертификаты.
+          //   a.about__link(href="/") Подробнее
           p.about__vertical
             | О нас
+    
+    .page-main__team
+      .team
+        h3.main__title.team__title
+          span.main__info__title-background.team__title-background
+            | Наша команда
+          span.main__info__title-text.team__title-text
+            | Наша команда
+        .main__info__subtitle.team__subtitle
+          | Мы готовим специально для Вас
+        .team__slider.js-team-swiper
+          .team__swiper.swiper-wrapper
+            -
+              var slides = [
+                {
+                  image: "team",
+                  backgroundColor: "#c9e7ff",
+                  name: "Иван Иванов.",
+                  position: "Шеф повар",
+                  description: "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор выпечки"
+                },
+                {
+                  image: "team",
+                  backgroundColor: "#257abc",
+                  name: "Иван Иванов.",
+                  position: "Cу-Шеф",
+                  description: "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор выпечки"
+                },
+                {
+                  image: "team",
+                  backgroundColor: "#c9e7ff",
+                  name: "Иван Иванов.",
+                  position: "Повар",
+                  description: "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор выпечки"
+                }
+              ]
+            each slide in slides
+              .team__employee.swiper-slide
+                .team__slide__info
+                  p.team__employee__name
+                    span.name= slide.name
+                    span.position= slide.position
+                  p.team__employee__description= slide.description
+                .team__employee__photo(style="background-image: url('" + assetsDir + "images/" + slide.image + ".png')")
+                  img(src=assetsDir + "images/" + slide.image + ".png", hidden)
+                  .background-circle(style="background-color:" + slide.backgroundColor)
+          .team__slider__control
+              .team__slider__prev.js-prev-slide
+                svg
+                  use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+              .team__slider__next.js-next-slide
+                svg
+                  use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+        p.team__vertical
+          | Наша команда

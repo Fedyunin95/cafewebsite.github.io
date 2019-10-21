@@ -1,0 +1,19 @@
+.main__info(class= block.class + "__info")
+  .main__info__title(class= block.class + "__info__title")
+    span.main__info__title-background(class= block.class + "__info__title-background")= block.title
+    span.main__info__title-text(class= block.class + "__info__title-text")= block.title
+
+  .main__info__subtitle(class= block.class + "__info__subtitle")= block.subtitle
+
+  .main__info__description(class= block.class + "__info__description")
+    each text in block.description
+     p= text
+
+  if block.links
+    ul.main__info__links(class= block.class + "__info__links")
+      each link in block.links
+        li.main__info__links-item
+          a(href= link.url)= link.text
+
+  if block.btn
+    a.main__info__link(class= block.class + "__info__link" ,href= block.btn.href) Подробнее

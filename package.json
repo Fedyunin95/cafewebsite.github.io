@@ -1,5 +1,5 @@
 {
-  "name": "Gifty",
+  "name": "Leto",
   "version": "1.0.0",
   "private": true,
   "description": "-",
@@ -13,8 +13,8 @@
     "validate": "cross-env NODE_ENV=production gulp validate --require @babel/register --gulpfile builder"
   },
   "repository": {
-    "type": "git",
-    "url": "git@gitlab.nologostudio.ru:igrik/gifty-fe.git"
+    "type": "",
+    "url": ""
   },
   "author": "igrik",
   "license": "ISC",

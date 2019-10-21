@@ -9835,31 +9835,17 @@ function mainPage(page) {
   var bannerSliders = page.querySelectorAll(".js-banner-swiper");
   var horizontalSliders = page.querySelectorAll(".js-horizontal-swiper");
   var eventsSliders = page.querySelectorAll(".js-singl-swiper_horizontal");
+  var teamSlider = page.querySelector(".js-team-swiper");
   var bannerSwiper;
 
   for (var i = 0, len = bannerSliders.length; i < len; i++) {
-    var nextBtn = bannerSliders[i].querySelector(".js-next-slide");
-    var prevBtn = bannerSliders[i].querySelector(".js-prev-slide");
+    var _nextBtn = bannerSliders[i].querySelector(".js-next-slide");
+
+    var _prevBtn = bannerSliders[i].querySelector(".js-prev-slide");
+
     bannerSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](bannerSliders[i], {
       loop: true,
       direction: "vertical",
-      navigation: {
-        nextEl: nextBtn,
-        prevEl: prevBtn
-      }
-    });
-  }
-
-  for (var _i = 0, _len = horizontalSliders.length; _i < _len; _i++) {
-    var _nextBtn = horizontalSliders[_i].querySelector(".js-next-slide");
-
-    var _prevBtn = horizontalSliders[_i].querySelector(".js-prev-slide");
-
-    bannerSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](horizontalSliders[_i], {
-      loop: false,
-      slidesPerView: 2,
-      slidesPerColumn: 2,
-      spaceBetween: 23,
       navigation: {
         nextEl: _nextBtn,
         prevEl: _prevBtn
@@ -9867,21 +9853,50 @@ function mainPage(page) {
     });
   }
 
-  for (var _i2 = 0, _len2 = eventsSliders.length; _i2 < _len2; _i2++) {
-    var _nextBtn2 = eventsSliders[_i2].querySelector(".js-next-slide");
+  for (var _i = 0, _len = horizontalSliders.length; _i < _len; _i++) {
+    var _nextBtn2 = horizontalSliders[_i].querySelector(".js-next-slide");
 
-    var _prevBtn2 = eventsSliders[_i2].querySelector(".js-prev-slide");
+    var _prevBtn2 = horizontalSliders[_i].querySelector(".js-prev-slide");
 
-    bannerSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](eventsSliders[_i2], {
+    bannerSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](horizontalSliders[_i], {
       loop: false,
-      slidesPerView: "auto",
-      spaceBetween: 25,
+      slidesPerView: 2,
+      slidesPerColumn: 2,
+      spaceBetween: 23,
       navigation: {
         nextEl: _nextBtn2,
         prevEl: _prevBtn2
       }
     });
   }
+
+  for (var _i2 = 0, _len2 = eventsSliders.length; _i2 < _len2; _i2++) {
+    var _nextBtn3 = eventsSliders[_i2].querySelector(".js-next-slide");
+
+    var _prevBtn3 = eventsSliders[_i2].querySelector(".js-prev-slide");
+
+    bannerSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](eventsSliders[_i2], {
+      loop: false,
+      slidesPerView: "auto",
+      spaceBetween: 25,
+      navigation: {
+        nextEl: _nextBtn3,
+        prevEl: _prevBtn3
+      }
+    });
+  }
+
+  var nextBtn = teamSlider.querySelector(".js-next-slide");
+  var prevBtn = teamSlider.querySelector(".js-prev-slide");
+  bannerSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](teamSlider, {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    navigation: {
+      nextEl: nextBtn,
+      prevEl: prevBtn
+    }
+  });
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (mainPage);
