@@ -1,0 +1,58 @@
+.contacts__info
+    h3.main__title.contacts__info__title
+        span.main__info__title-background.contacts__info__title-background
+            | Контакты
+        span.main__info__title-text.contacts__info__title-text
+            | Контакты
+    p.main__info__subtitle.contacts__info__subtitle
+        | Мы предлагаем Вам провести у нас время всей семьей
+    .contacts__info__contacts
+        -
+            var contacts = [
+                {
+                    title: "Адрес:",
+                    info: ["г.Черняховск, ул. Калининградская, 5, ТЦ \"Радуга\""],
+                },
+                {
+                    title: "Время работы:",
+                    info: ["Пн-Вс", "11:00 - 23:00"],
+                },
+                {
+                    title: "Телефоны:",
+                    info: ["+7 909 782 8450", "+7 909 782 8450"],
+                },
+            ]
+        each contact in contacts
+            .contacts__info__contact
+                .contact
+                    h5.contact__title= contact.title
+                    p.contact__info
+                        each  text in contact.info
+                            span= text
+    .contacts__info__footer
+        .social-links
+            h5.social-links__title
+                | Мы в соц. сетях
+            -
+                var links = [
+                    {
+                        url: "/",
+                        icon: "VK"
+                    },
+                    {
+                        url: "/",
+                        icon: "instagram-logo"
+                    },
+                    {
+                        url: "/",
+                        icon: "facebook"
+                    }
+                ]
+            .social-links__wrapper
+                each link in links
+                    a.social-links__link(href= link.url)
+                        svg
+                            use(xlink:href=assetsDir + "images/sprite.symbol.svg#" + link.icon)
+        button.button.reserve__btn.page-main__reserve__btn
+            span.text
+                | Забронировать

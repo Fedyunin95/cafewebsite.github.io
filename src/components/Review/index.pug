@@ -1,0 +1,7 @@
+.review(class= review.class)
+    .review__photo(style="background-image: url('" + assetsDir + "images/" + review.photo + ".png')", class= review.class + "__photo")
+        img(src= assetsDir + "images/" + review.photo + ".png", hidden)
+    .review__info(class= review.class + "__info")
+        p.review__info__date(class= review.class + "__info__date")= review.date
+        p.review__info__name(class= review.class + "__info__name")= review.name
+        p.review__info__text(class= review.class + "__info__text")= review.reviewText

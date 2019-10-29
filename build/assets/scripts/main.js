@@ -9794,6 +9794,64 @@ Swiper.use(components);
 
 /***/ }),
 
+/***/ "./src/components/Callback/main.js":
+/*!*****************************************!*\
+  !*** ./src/components/Callback/main.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function Callback(callback) {
+  //  found all inputs wrappers in callback block
+  var timeInputs = callback.querySelectorAll(".js-callback-input");
+
+  var _loop = function _loop(i, len) {
+    // initialize incriment and decriment buttons
+    var incBtn = timeInputs[i].querySelector(".js-input-inc");
+    var decBtn = timeInputs[i].querySelector(".js-input-dec"); // initialize input field
+
+    var inputField = timeInputs[i].querySelector("input"); // get max and min input counts
+
+    var maxCount = parseInt(inputField.getAttribute("max"));
+    var minCount = parseInt(inputField.getAttribute("min"));
+    incBtn.addEventListener("click", function () {
+      inputField.value = updateInputCount(parseInt(inputField.value), "inc", maxCount, null);
+    });
+    decBtn.addEventListener("click", function () {
+      inputField.value = updateInputCount(parseInt(inputField.value), "dec", null, minCount);
+    });
+    inputField.addEventListener("change", function () {
+      if (parseInt(inputField.value) < minCount) {
+        inputField.value = minCount;
+      } else if (parseInt(inputField.value) > maxCount) {
+        inputField.value = maxCount;
+      }
+    });
+  };
+
+  for (var i = 0, len = timeInputs.length; i < len; i++) {
+    _loop(i, len);
+  }
+}
+
+function updateInputCount(value, modificator, max, min) {
+  if (modificator === "inc") {
+    if (value < max) {
+      value++;
+    }
+  } else if (value > min) {
+    value--;
+  }
+
+  return value;
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Callback);
+
+/***/ }),
+
 /***/ "./src/components/Header/main.js":
 /*!***************************************!*\
   !*** ./src/components/Header/main.js ***!
@@ -9816,6 +9874,211 @@ function HeaderScripts(header) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (HeaderScripts);
+
+/***/ }),
+
+/***/ "./src/components/RollUp/main.js":
+/*!***************************************!*\
+  !*** ./src/components/RollUp/main.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Rollup; });
+function Rollup(rollup) {
+  rollup.addEventListener("click", function () {
+    document.querySelector(".js-header").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  });
+}
+
+/***/ }),
+
+/***/ "./src/containers/PageAbout/main.js":
+/*!******************************************!*\
+  !*** ./src/containers/PageAbout/main.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/dist/js/swiper.esm.bundle.js");
+
+
+function pageAbout(page) {
+  var eventsSliders = page.querySelectorAll(".js-singl-swiper_horizontal");
+  var bannerSwiper;
+
+  for (var i = 0, len = eventsSliders.length; i < len; i++) {
+    var nextBtn = eventsSliders[i].querySelector(".js-next-slide");
+    var prevBtn = eventsSliders[i].querySelector(".js-prev-slide");
+    bannerSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](eventsSliders[i], {
+      loop: false,
+      slidesPerView: "auto",
+      spaceBetween: 25,
+      navigation: {
+        nextEl: nextBtn,
+        prevEl: prevBtn
+      }
+    });
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (pageAbout);
+
+/***/ }),
+
+/***/ "./src/containers/PageContacts/main.js":
+/*!*********************************************!*\
+  !*** ./src/containers/PageContacts/main.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* global ymaps:true */
+
+/* eslint no-undef:"error" */
+function Contacts(pageContacts) {
+  ymaps.ready(function () {
+    var myMap = new ymaps.Map("map", {
+      center: [54.6358252, 21.806184],
+      zoom: 14
+    });
+    var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+      // iconLayout: "default#image",
+      iconImageHref: "/images/map-dot.svg",
+      iconImageSize: [30, 42],
+      iconImageOffset: [-5, -38]
+    });
+    myMap.geoObjects.add(myPlacemark);
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Contacts);
+
+/***/ }),
+
+/***/ "./src/containers/PageGalleryInside/main.js":
+/*!**************************************************!*\
+  !*** ./src/containers/PageGalleryInside/main.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return GalleryInside; });
+function GalleryInside(gallery) {
+  var images = gallery.querySelectorAll(".js-image");
+  var popup = gallery.querySelector(".js-gallery-popup");
+  var closePopupBtn = popup.querySelector(".js-close-popup");
+  var prevImageBtn = popup.querySelector(".js-prev-image");
+  var nextImageBtn = popup.querySelector(".js-next-image");
+
+  var _loop = function _loop(i, len) {
+    images[i].addEventListener("click", function () {
+      var image = images[i].querySelector("img");
+      var imageUrl = image.getAttribute("src");
+      nextImageBtn.classList.remove("page-gallery__popup__btn_disable");
+      prevImageBtn.classList.remove("page-gallery__popup__btn_disable");
+      openPopup(popup, imageUrl, i, prevImageBtn, nextImageBtn, len - 1);
+    });
+  };
+
+  for (var i = 0, len = images.length; i < len; i++) {
+    _loop(i, len);
+  }
+
+  closePopupBtn.addEventListener("click", function () {
+    closePopup(popup);
+  });
+  prevImageBtn.addEventListener("click", function () {
+    var currentImage = +popup.getAttribute("active-image");
+    var popupImage = popup.querySelector("img");
+
+    if (currentImage !== 0) {
+      var image = changeImage(currentImage, "prev", images, popup);
+
+      if (image) {
+        popupImage.setAttribute("src", image);
+      } else {
+        return;
+      }
+    }
+
+    if (nextImageBtn.classList.contains("page-gallery__popup__btn_disable")) {
+      nextImageBtn.classList.remove("page-gallery__popup__btn_disable");
+    }
+
+    if (currentImage === 1) {
+      prevImageBtn.classList.add("page-gallery__popup__btn_disable");
+    }
+  });
+  nextImageBtn.addEventListener("click", function () {
+    var currentImage = +popup.getAttribute("active-image");
+    var popupImage = popup.querySelector("img");
+
+    if (currentImage !== images.length - 1) {
+      var image = changeImage(currentImage, "next", images, popup);
+
+      if (image) {
+        popupImage.setAttribute("src", image);
+      } else {
+        return;
+      }
+    }
+
+    if (prevImageBtn.classList.contains("page-gallery__popup__btn_disable")) {
+      prevImageBtn.classList.remove("page-gallery__popup__btn_disable");
+    }
+
+    if (currentImage === images.length - 2) {
+      nextImageBtn.classList.add("page-gallery__popup__btn_disable");
+    }
+  });
+}
+
+function openPopup(popup, imageURL, imageIndex, prevBtn, nextBtn, imageLength) {
+  var popupImage = popup.querySelector("img");
+  popupImage.setAttribute("src", imageURL);
+  popup.classList.add("page-gallery__popup_active");
+
+  if (imageIndex === 0) {
+    prevBtn.classList.add("page-gallery__popup__btn_disable");
+  } else if (imageIndex === imageLength) {
+    nextBtn.classList.add("page-gallery__popup__btn_disable");
+  }
+
+  popup.setAttribute("active-image", imageIndex);
+}
+
+function closePopup(popup) {
+  popup.classList.remove("page-gallery__popup_active");
+}
+
+function changeImage(currentImg, type, images, popup) {
+  var nextSlide = null;
+
+  if (type === "next") {
+    var nextSlideNum = currentImg + 1;
+    nextSlide = images[nextSlideNum].querySelector("img").getAttribute("src");
+    popup.setAttribute("active-image", nextSlideNum);
+  } else if (type === "prev") {
+    var _nextSlideNum = currentImg - 1;
+
+    nextSlide = images[_nextSlideNum].querySelector("img").getAttribute("src");
+    popup.setAttribute("active-image", _nextSlideNum);
+  }
+
+  return nextSlide;
+}
 
 /***/ }),
 
@@ -9915,18 +10178,53 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var svg4everybody__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svg4everybody */ "./node_modules/svg4everybody/dist/svg4everybody.js");
 /* harmony import */ var svg4everybody__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg4everybody__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Header_main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Header/main */ "./src/components/Header/main.js");
-/* harmony import */ var _containers_PageMain_main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../containers/PageMain/main */ "./src/containers/PageMain/main.js");
+/* harmony import */ var _components_Callback_main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Callback/main */ "./src/components/Callback/main.js");
+/* harmony import */ var _components_RollUp_main__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/RollUp/main */ "./src/components/RollUp/main.js");
+/* harmony import */ var _containers_PageMain_main__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../containers/PageMain/main */ "./src/containers/PageMain/main.js");
+/* harmony import */ var _containers_PageContacts_main__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../containers/PageContacts/main */ "./src/containers/PageContacts/main.js");
+/* harmony import */ var _containers_PageAbout_main__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../containers/PageAbout/main */ "./src/containers/PageAbout/main.js");
+/* harmony import */ var _containers_PageGalleryInside_main__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../containers/PageGalleryInside/main */ "./src/containers/PageGalleryInside/main.js");
+
+
+
+
+
 
 
 
 document.addEventListener("DOMContentLoaded", function () {
   svg4everybody__WEBPACK_IMPORTED_MODULE_0___default()();
   var headerBlock = document.querySelector(".js-header");
+  var callback = document.querySelector(".js-callback");
   var pageMain = document.querySelector(".js-main-page");
+  var pageContacts = document.querySelector(".js-page-contacts");
+  var pageAbout = document.querySelector(".js-page-about");
+  var pageGalleryInside = document.querySelector(".js-page-gallery");
+  var rollup = document.querySelector(".js-rollup");
   new _components_Header_main__WEBPACK_IMPORTED_MODULE_1__["default"](headerBlock);
 
   if (pageMain) {
-    new _containers_PageMain_main__WEBPACK_IMPORTED_MODULE_2__["default"](pageMain);
+    new _containers_PageMain_main__WEBPACK_IMPORTED_MODULE_4__["default"](pageMain);
+  }
+
+  if (callback) {
+    new _components_Callback_main__WEBPACK_IMPORTED_MODULE_2__["default"](callback);
+  }
+
+  if (pageContacts) {
+    new _containers_PageContacts_main__WEBPACK_IMPORTED_MODULE_5__["default"](pageContacts);
+  }
+
+  if (pageAbout) {
+    new _containers_PageAbout_main__WEBPACK_IMPORTED_MODULE_6__["default"](pageAbout);
+  }
+
+  if (pageGalleryInside) {
+    new _containers_PageGalleryInside_main__WEBPACK_IMPORTED_MODULE_7__["default"](pageGalleryInside);
+  }
+
+  if (rollup) {
+    new _components_RollUp_main__WEBPACK_IMPORTED_MODULE_3__["default"](rollup);
   }
 });
 

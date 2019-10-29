@@ -47,13 +47,13 @@ html(
     script(src= assetsDir + "scripts/" + mainScriptFileName + ".js")
     div.wrapper
 
-      - var header = {class: "header_black"}
-      if pageName = "main"
-        - var header = {class: ""}
+      if pageName !== "main"
+        - var header= {class: "header_black"}
+        include /components/Header/index
       else
-        - var header = {class: "header_black"}
+        - var header= {class: ""}
+        include /components/Header/index
 
-      include /components/Header/index
 
       - var mainBlockClass = "main";
 

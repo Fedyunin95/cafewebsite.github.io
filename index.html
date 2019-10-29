@@ -7,7 +7,7 @@
     <meta name="description" content="Meta description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    <title>Gifty
+    <title>Leto
     </title>
     <link rel="stylesheet" href="build/assets/styles/main.min.css">
     <script>
@@ -18,15 +18,15 @@
         document.documentElement.className += " fonts-loaded-2";
         return;
     } else if( "fonts" in document ) {
-        document.fonts.load("1em MontserratSubset").then(function () {
+        document.fonts.load("1em BodoniSubset").then(function () {
             document.documentElement.className += " fonts-loaded-1";
             Promise.all([
-                document.fonts.load("400 1em Montserrat"),
-                document.fonts.load("500 1em Montserrat"),
-                document.fonts.load("600 1em Montserrat"),
-                document.fonts.load("700 1em Montserrat"),
-                document.fonts.load("900 1em Montserrat"),
-                document.fonts.load("italic 500 1em Montserrat")
+                document.fonts.load("400 1em Bodoni"),
+                document.fonts.load("500 1em Bodoni"),
+                // document.fonts.load("600 1em Bodoni"),
+                document.fonts.load("700 1em Bodoni"),
+                // document.fonts.load("900 1em Bodoni"),
+                document.fonts.load("italic 500 1em Bodoni")
             ]).then(function () {
                 document.documentElement.className += " fonts-loaded-2";
                 // Optimization for Repeat Views
@@ -51,8 +51,44 @@
     </script>
   </head>
   <body>
+    <script src="build/assets/scripts/main.min.js"></script>
     <div class="wrapper">
-      <div class="header js-header"></div>
+      <header class="header js-header  header_black">
+        <div class="header__menu-btn js-header-open">
+          <button class="menu__btn_open"><span></span></button><span class="tirle">Меню</span>
+        </div>
+        <div class="header__menu js-header-menu">
+          <div class="header__menu__wrapper">
+            <button class="header__menu__btn_close js-header-close"><span class="text">Закрыть</span><span class="icon"><span class="first"></span><span class="last"></span></span></button>
+            <ul class="list">
+              <li class="list__item js-list-item"><a class="list__item__link" href="main">Меню</a></li>
+              <li class="list__item js-list-item"><a class="list__item__link" href="main">О нас</a></li>
+              <li class="list__item js-list-item"><a class="list__item__link" href="main">Мероприятия</a></li>
+              <li class="list__item js-list-item"><a class="list__item__link" href="main">Отзывы</a></li>
+              <li class="list__item js-list-item"><a class="list__item__link" href="main">Контакты</a></li>
+            </ul><a class="button header__btn" href="/">Забронировать</a>
+            <div class="header__contacts">
+              <div class="contact"><span class="title">Адрес</span><span class="info">г.Черняховск, ул. Калининградская, 5, ТЦ &quot;Радуга&quot;</span>
+              </div>
+              <div class="contact"><span class="title">Время работы</span><span class="info">Пн-Вс</span><span class="info">11:00 - 23:00</span>
+              </div>
+              <div class="contact"><span class="title">Телефон</span><span class="info">+7 909 782 8450</span><span class="info">+7 909 782 8450</span>
+              </div>
+            </div>
+          </div>
+          <div class="header__menu__images">
+            <div class="image-slide js-list-item-bg" style="background-image: url(images/headerBG1.png)"><img src="images/headerBG1.png" hidden></div>
+            <div class="image-slide js-list-item-bg" style="background-image: url(images/headerBG2.png)"><img src="images/headerBG2.png" hidden></div>
+            <div class="image-slide js-list-item-bg" style="background-image: url(images/headerBG1.png)"><img src="images/headerBG1.png" hidden></div>
+            <div class="image-slide js-list-item-bg" style="background-image: url(images/headerBG2.png)"><img src="images/headerBG2.png" hidden></div>
+            <div class="image-slide js-list-item-bg" style="background-image: url(images/headerBG1.png)"><img src="images/headerBG1.png" hidden></div>
+          </div>
+        </div>
+        <div class="header__logo logo">
+          <div class="header__logo__icon logo__icon"></div>
+          <p class="header__logo__text logo__text">Leto</p>
+        </div>
+      </header>
       <main class="main">
         <style>
           .project-pages {
@@ -108,11 +144,56 @@
           <ul class="project-pages__items">
             <li class="project-pages__item"><a class="project-pages__link" href="build/main.html">Главная [main]</a>
             </li>
+            <li class="project-pages__item"><a class="project-pages__link" href="build/contacts.html">Контакты [contacts]</a>
+            </li>
+            <li class="project-pages__item"><a class="project-pages__link" href="build/about.html">О нас [about]</a>
+            </li>
+            <li class="project-pages__item"><a class="project-pages__link" href="build/gallery.html">Галлерея [gallery]</a>
+            </li>
+            <li class="project-pages__item"><a class="project-pages__link" href="build/gallery-inside.html">Галерея внутренняя [gallery-inside]</a>
+            </li>
+            <li class="project-pages__item"><a class="project-pages__link" href="build/review.html">Отзывы [review]</a>
+            </li>
+            <li class="project-pages__item"><a class="project-pages__link" href="build/menu.html">Меню [menu]</a>
+            </li>
           </ul>
         </div>
       </main>
-      <footer class="footer"></footer>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <div class="footer__nav-block">
+            <div class="footer__logo logo">
+              <div class="header__logo__icon logo__icon"></div>
+              <p class="header__logo__text logo__text">Leto</p>
+            </div>
+            <ul class="footer__nav">
+              <li class="footer__nav-link"><a href="/">меню</a></li>
+              <li class="footer__nav-link"><a href="/">о нас</a></li>
+              <li class="footer__nav-link"><a href="/">мероприятия</a></li>
+              <li class="footer__nav-link"><a href="/">отзывы</a></li>
+              <li class="footer__nav-link"><a href="/">галерея</a></li>
+              <li class="footer__nav-link"><a href="/">контакты</a></li>
+            </ul>
+            <p class="footer__copyright">Copyright © 2019</p>
+          </div>
+          <div class="footer__social">
+            <div class="social-links">
+              <div class="social-links__link"><a href="/">
+                  <svg>
+                    <use xlink:href="build/assets/images/sprite.symbol.svg#VK"></use>
+                  </svg></a></div>
+              <div class="social-links__link"><a href="/">
+                  <svg>
+                    <use xlink:href="build/assets/images/sprite.symbol.svg#insta"></use>
+                  </svg></a></div>
+              <div class="social-links__link"><a href="/">
+                  <svg>
+                    <use xlink:href="build/assets/images/sprite.symbol.svg#facebook"></use>
+                  </svg></a></div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-    <script src="build/assets/scripts/main.min.js"></script>
   </body>
 </html>

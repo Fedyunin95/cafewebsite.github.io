@@ -1,0 +1,45 @@
+.review {
+  width: 100%;
+  min-width: 100%;
+  display: flex;
+
+  &__photo {
+    width: 144px;
+    height: 144px;
+    min-width: 144px;
+    margin-right: 51px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__info {
+    width: 50%;
+    color: #000;
+
+    &__date {
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.33px;
+      font-family: $font-main;
+      margin-bottom: 5px;
+    }
+
+    &__name {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.45px;
+      margin-bottom: 11px;
+      font-family: $font-main;
+    }
+
+    &__text {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 25px;
+      font-family: $font-second;
+    }
+  }
+}

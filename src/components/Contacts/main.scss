@@ -1,0 +1,107 @@
+.contacts__info {
+  width: auto;
+  padding-top: 138px;
+  &__title {
+    position: relative;
+
+    &-background {
+      left: -10px !important;
+      top: -60px;
+    }
+  }
+
+  &__subtitle {
+    max-width: 245px;
+    margin-bottom: 20px;
+  }
+
+  &__contacts {
+    display: flex;
+    color: #000;
+    font-family: $font-second;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  &__contact {
+    max-width: 120px;
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .contact {
+      &__title {
+        line-height: 24px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+
+      &__info {
+        line-height: 24px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    margin-top: 35px;
+
+    .social-links {
+      color: #000;
+      fill: #4d4d4d;
+      max-width: 130px;
+      margin-right: 34px;
+
+      &__title {
+        text-transform: uppercase;
+        font-family: $font-second;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 10px;
+      }
+
+      &__wrapper {
+        display: flex;
+        height: 30px;
+        fill: inherit;
+      }
+
+      &__link {
+        width: 30px;
+        margin-right: 10px;
+        transition: fill .6s;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &:hover {
+          fill: #46687a;
+        }
+
+      }
+
+    }
+
+    .button {
+      background-color: #FFFFFF;
+      color: $color-font;
+
+      &:after {
+        background-color: $color-font;
+      }
+
+      &:hover {
+        color: #FFFFFF;
+      }
+    }
+
+  }
+
+}

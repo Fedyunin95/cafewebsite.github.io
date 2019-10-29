@@ -1,0 +1,30 @@
+.rollup {
+  width: 53px;
+  height: 53px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 55px;
+  bottom: 230px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.27);
+  background-color: #fcfcfb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: box-shadow .5s;
+
+  &__icon {
+    width: 23px;
+    height: 13px;
+    margin: auto;
+    transition: transform .5s;
+  }
+  
+  &:hover > &__icon {
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+}

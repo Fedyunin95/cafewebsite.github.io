@@ -1,0 +1,163 @@
+extends /containers/layout
+
+block variables
+
+block content
+
+    div.page-about.js-page-about
+        .about
+            .about__block
+                p.about__vertical
+                    | О нас
+                -
+                    var block = {
+                        class : "page-about__block",
+                        title: {
+                            text: "О нас",
+                            bg: "О нас"
+                        },
+                        subtitle: "Здесь будет текст о меню, текст о меню, текст о этом меню ",
+                        description: [
+                            "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая. Также вы можете заказать у нас торт или приобрести подарочные сертификаты.",
+                            "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая. Также вы можете заказать у нас торт или приобрести подарочные сертификаты. "
+                        ]
+                    }
+                include ../PageMain/infoBlock.pug
+                .about__block__image(style="background-image: url('"+ assetsDir + "images/aboutIMG.png')")
+                    img(src=assetsDir + "images/aboutIMG.png" hidden)
+            -
+                var block = {class: "page-about__reserve"}
+
+            include /components/Reserve/index
+
+            .about__block.about__block_kitchen
+                .about__block__image-wrapper
+                    .about__block__image(style="background-image: url('" + assetsDir + "images/kitchen.png')")
+                        img(src=assetsDir + "images/kitchen.png" hidden)
+                        .play__btn
+                            svg
+                                use(xlink:href=assetsDir + "images/sprite.symbol.svg#play")
+                -
+                    var block = {
+                        class : "page-about__block_kitchen page-about__block",
+                        title: {
+                            text: "Наша кухня",
+                            bg: "Кухня"
+                        },
+                        subtitle: "Здесь будет текст о меню, текст о меню, текст о этом меню ",
+                        description: [
+                            "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая. Также вы можете заказать у нас торт или приобрести подарочные сертификаты. "
+                        ],
+                        btn : {
+                            href : "/",
+                            text: "посмотреть меню"
+
+                        }
+                    }
+                include ../PageMain/infoBlock.pug
+
+                p.about__vertical.about__vertical_right
+                    | Кухня
+            -
+                var block = {class: "page-about__reserve"}
+
+            .page-about__gallery.page-about__gallery.js-singl-swiper_horizontal
+                .swiper-wrapper
+                    -
+                        var images = [
+                        "galleryIMG",
+                        "galleryIMG",
+                        "galleryIMG",
+                        "galleryIMG",
+                        ]
+                    each slide in images
+                        .swiper-slide(style="background-image: url('" + assetsDir + "images/" + slide + ".png')")
+                            img(src=assetsDir + "images/" + slide + ".png", hidden)
+                .page-main__gallery__slider__control
+                    .page-main__gallery__slider__prev.js-prev-slide
+                        svg
+                            use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+                    .page-main__gallery__slider__next.js-next-slide
+                        svg
+                            use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+
+            .page-main__events
+                .events
+                    .events__header
+                        h4.events__header__title
+                            | 2019
+                        .events__dots
+                            -
+                                var dots = ["Апрель", "Мая", "Июнь"]
+                            each dot in dots
+                                .dot
+                                    h5.dot__title= dot
+                                    span.dot__circle
+                        .events__more
+                            svg
+                                use(xlink:href=assetsDir + "images/sprite.symbol.svg#arrow_long")
+                    .events__body
+                        .events__slider.js-singl-swiper_horizontal
+                            .swiper-wrapper
+                                -
+                                    var slides = [
+                                        {
+                                            img: "eventsIMG1",
+                                            text: '"Игра Головой" 22.10'
+                                        },
+                                        {
+                                            img: "eventsIMG1",
+                                            text: '"Игра Головой" 22.10'
+                                        },
+                                        {
+                                            img: "eventsIMG1",
+                                            text: '"Игра Головой" 22.10'
+                                        },
+                                        {
+                                            img: "eventsIMG1",
+                                            text: '"Игра Головой" 22.10'
+                                        }
+                                    ]
+                                each slide in slides
+                                    .swiper-slide.events__slider__slide(style="background-image: url('" + assetsDir + "images/" + slide.img + ".png')")
+                                        span.events__slider__slide-text= slide.text
+                                        img(src= assetsDir + "images/" + slide.img + ".png", hidden)
+                            .events__slider__control
+                                .events__slider__prev.js-prev-slide
+                                    svg
+                                        use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+                                .events__slider__next.js-next-slide
+                                    svg
+                                        use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+                        -
+                            var block = {
+                                class : "page-about__block_events page-about__block",
+                                title: {
+                                    text: "Мероприятия",
+                                    bg: "Мероприятия"
+                                },
+                                subtitle: "Мы предлагаем Вам провести у нас время всей семьей",
+                                description: [
+                                    "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая. Также вы можете заказать у нас торт или приобрести подарочные сертификаты."
+                                ],
+                                btn : {
+                                    href : "/"
+                                }
+                            }
+                        include ../PageMain/infoBlock
+                        p.events__vertical
+                            | Мероприятия
+            .page-about__callback
+                - var block = {class: "page-main__callback"}
+                include /components/Callback/index
+            .page-about__pictures
+                -
+                    var images = [
+                        "pageAboutIMG1",
+                        "pageAboutIMG2",
+                        "pageAboutIMG3",
+                        "pageAboutIMG4",
+                    ]
+                each image in images
+                    .page-about__pictures__image(style="background-image: url('" + assetsDir + "images/" + image +".png')")
+                        img(src=assetsDir + "images/" + image + ".png", hidden)

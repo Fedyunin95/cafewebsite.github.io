@@ -1,7 +1,7 @@
 .main__info(class= block.class + "__info")
   .main__info__title(class= block.class + "__info__title")
-    span.main__info__title-background(class= block.class + "__info__title-background")= block.title
-    span.main__info__title-text(class= block.class + "__info__title-text")= block.title
+    span.main__info__title-background(class= block.class + "__info__title-background")= block.title.bg
+    span.main__info__title-text(class= block.class + "__info__title-text")= block.title.text
 
   .main__info__subtitle(class= block.class + "__info__subtitle")= block.subtitle
 
@@ -16,4 +16,8 @@
           a(href= link.url)= link.text
 
   if block.btn
-    a.main__info__link(class= block.class + "__info__link" ,href= block.btn.href) Подробнее
+    if block.btn.text
+      a.main__info__link(class= block.class + "__info__link" ,href= block.btn.href)= block.btn.text
+    else
+      a.main__info__link(class= block.class + "__info__link" ,href= block.btn.href)
+        | Подробнее

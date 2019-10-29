@@ -1,0 +1,39 @@
+extends /containers/layout
+
+block variables
+
+block content
+
+    .page-gallery
+        h3.page-gallery__title
+            span.page-gallery__title-background
+                | Галерея
+            span.page-gallery__title-text
+                | Галерея
+        p.page-gallery__subtitle
+            span
+                | Вы можете  оставить отзыв о нашем кафе, оставьте свои контакты для связи с Вами
+        .page-gallery__images
+            -
+                var images = [
+                    {
+                        img: "eventsIMG1",
+                        linkText: "Фотографии интерьера"
+                    },
+                    {
+                        img: "mainMenuIMG2",
+                        linkText: "Фотографии блюд и напитков"
+                    },
+                    {
+                        img: "headerBG2",
+                        linkText: "Фотографии с мероприятий"
+                    }
+                ]
+            each image in images
+                .page-gallery__images-item(style="background-image: url('" + assetsDir + "images/" + image.img + ".png')")
+                    img(src=assetsDir + "images/" + image.img + ".png", hidden)
+                    a.page-gallery__images-item__link(href=assetsDir + "/gallery-inside")
+                        span= image.linkText
+        .page-gallery__callback
+            - var block = {class: "page-main__callback"}
+            include /components/Callback/index

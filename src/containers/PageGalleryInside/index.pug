@@ -1,0 +1,51 @@
+extends /containers/layout
+
+block variables
+
+block content
+
+    .page-gallery.js-page-gallery
+        h3.page-gallery__title
+            span.page-gallery__title-background
+            span.page-gallery__title-text
+                | Блюда и напитки
+        p.page-gallery__subtitle
+            span
+                | Вы можете  оставить отзыв о нашем кафе, оставьте свои контакты для связи с Вами
+        .page-gallery_inside
+            -
+                var images = [
+                    "galleryIMG",
+                    "headerBG2",
+                    "galleryIMG",
+                    "headerBG2",
+                    "headerBG2",
+                    "headerBG2",
+                    "headerBG2",
+                    "headerBG2",
+                    "headerBG2",
+                    "headerBG2",
+                    "headerBG2",
+                    "headerBG2"
+                ]
+            each image, index in images
+                .page-gallery_inside__item.js-image(
+                    style="background-image: url('" + assetsDir + "images/" + image + ".png')"
+                    data-index=index
+                )
+                    img(src=assetsDir + "images/" + image + ".png", hidden)
+        .page-gallery__callback
+            - var block = {class: "page-main__callback"}
+            include /components/Callback/index
+
+        .page-gallery__popup.js-gallery-popup(active-image="")
+            .page-gallery__popup-wrapper
+                .page-gallery__popup__close.js-close-popup
+                img.page-gallery__popup__image(src="./images/headerBG2.png")
+            .page-gallery__popup__btn_prev.js-prev-image
+                svg
+                    use(xlink:href=assetsDir + "images/sprite.symbol.svg#arrow")
+            .page-gallery__popup__btn_next.js-next-image
+                svg
+                    use(xlink:href=assetsDir + "images/sprite.symbol.svg#arrow")
+

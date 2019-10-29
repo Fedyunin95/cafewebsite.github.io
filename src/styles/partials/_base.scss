@@ -127,7 +127,6 @@ body {
 
 .title {
   color: $color-basic;
-  font-family: Montserrat;
   font-size: 30px;
   font-style: normal;
   font-weight: normal;
@@ -147,6 +146,10 @@ textarea:focus {
   outline: none;
 }
 
+input, input:hover, input:focus {
+  @include hide-input-spinners;
+}
+
 svg {
   width: 100%;
   height: 100%;
@@ -158,7 +161,7 @@ svg {
   letter-spacing: .71px;
   text-transform: uppercase;
   color: inherit;
-  font-family: Roboto;
+  font-family: $font-second;
   display: flex;
   align-items: center;
   z-index: 0;

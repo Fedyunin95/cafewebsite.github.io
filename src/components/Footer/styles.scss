@@ -1,5 +1,5 @@
 .footer {
-  background-color: $color-basic;
+  background-color: rgba(247, 247, 242, 0.35);
   height: 200px;
   box-sizing: border-box;
   padding: 41px 20px;
@@ -101,6 +101,7 @@
       &__link {
         width: 31px;
         height: 29px;
+        fill: #46687a;
 
         a {
           width: 100%;

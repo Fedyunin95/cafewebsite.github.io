@@ -1,0 +1,172 @@
+.callback {
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+
+  &__title {
+    font-size: 30px;
+    color: #000;
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  &__form {
+    &__time {
+      .time {
+        display: flex;
+        width: 100%;
+        height: 36px;
+        justify-content: center;
+
+        &__input-label {
+          font-size: 14px;
+          font-weight: 300;
+          letter-spacing: 0.54px;
+          line-height: 25px;
+          color: #000;
+          display: flex;
+          text-transform: uppercase;
+          font-family: $font-second;
+          align-items: center;
+          margin-right: 43px;
+
+          svg {
+            width: 8px;
+            height: 4px;
+            transform: rotate(90deg);
+            margin: 0 26px 0 8px;
+          }
+        }
+
+        &__input__wrapper {
+          width: 54px;
+          height: 36px;
+          position: relative;
+          border: 1px solid $color-font;
+
+          &_first {
+            margin-right: 17px;
+
+            &:after {
+              content: ":";
+              position: absolute;
+              right: -12px;
+              top: 50%;
+              transform: translateY(-50%);
+              color: #000;
+              font-family: $font-second;
+              font-size: 16px;
+              font-weight: 400;
+              letter-spacing: 0.62px;
+            }
+          }
+        }
+
+        &__input {
+          width: 100%;
+          height: 100%;
+          background-color: transparent;
+          border: none;
+          //appearance: textfield;
+          @include hide-input-spinners;
+          color: #000000;
+          font-family: $font-second;
+          font-size: 16px;
+          font-weight: 400;
+          letter-spacing: 0.62px;
+          padding: 0 24px 0 10px;
+          box-sizing: border-box;
+          text-align: right;
+
+          //&:hover {
+          //  @mixin hide-input-spinners;
+          //}
+
+
+          &-inc, &-dec {
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            right: 9px;
+            top: 10px;
+            cursor: pointer;
+          }
+
+          &-dec {
+            top: unset;
+            bottom: 7px;
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .phone {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 26px;
+
+        &__input {
+          width: 100%;
+          max-width: 386px;
+          margin-right: 18px;
+          border: none;
+          border-bottom: 1px solid $color-font;
+          height: 44px;
+          padding: 0;
+          font-size: 14px;
+          font-weight: 300;
+          text-transform: uppercase;
+          font-family: $font-second;
+        }
+      }
+    }
+  }
+  
+  &__submit {
+    width: 156px;
+    height: 44px;
+    border: 1px solid $color-font;
+    background-color: $color-font;
+    color: #fff;
+    font-family: $font-second;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.51px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    transition: color .6s;
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+    
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #FFFFFF;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform .6s;
+      left: 0;
+      top: 0;
+    }
+
+    &:hover {
+      color: $color-font;
+      &:after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+  }
+}

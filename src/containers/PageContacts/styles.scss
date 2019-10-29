@@ -1,0 +1,38 @@
+.page-contacts {
+  height: auto;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+
+  &__wrapper {
+    width: 100%;
+    margin: auto auto;
+    max-width: 1060px;
+    display: flex;
+    position: relative;
+  }
+
+  &__vertical {
+    position: absolute;
+    top: 0;
+    left: -35px;
+    height: 100%;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.6px;
+    writing-mode: vertical-lr;
+    color: $color-font;
+    font-family: $font-second;
+    text-transform: uppercase;
+    text-align: center;
+    user-select: none;
+  }
+
+  &__map {
+    width: 438px;
+    height: 366px;
+    margin-right: 47px;
+    align-self: flex-end;
+  }
+}

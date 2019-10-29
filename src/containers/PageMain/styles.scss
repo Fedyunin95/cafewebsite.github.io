@@ -303,6 +303,7 @@
         justify-content: center;
         margin-right: 20px;
         font-family: $font-second;
+        text-transform: uppercase;
       }
       // menu vertical title end
 
@@ -615,6 +616,7 @@
           font-size: 10px;
           font-weight: 300;
           font-family: $font-second;
+          text-transform: uppercase;
         }
       }
 
@@ -711,6 +713,7 @@
           right: 27px;
           top: 50%;
           transform: translateY(-50%);
+          text-transform: uppercase;
         }
 
         &__img {
@@ -770,6 +773,7 @@
           font-family: $font-second;
           text-align: center;
           z-index: 1;
+          text-transform: uppercase;
         }
 
         &__slider {
@@ -847,6 +851,7 @@
 
             div {
               width: 33px;
+              height: 33px;
               background-color: #fff;
               border: 1px solid rgba(0, 0, 0, 0.16);
               padding: 0 11px;
@@ -872,4 +877,216 @@
 
       }
     }
+  // team block end
+
+  // reviews block
+    &__reviews {
+    width: 100%;
+      margin-bottom: 91px;
+
+      .reviews {
+        width: 100%;
+        max-width: 1060px;
+        margin: 0 auto;
+        position: relative;
+        padding-left: 59px;
+        box-sizing: border-box;
+
+        &__vertical {
+          position: absolute;
+          left: 0;
+          text-align: center;
+          height: 100%;
+          writing-mode: vertical-lr;
+          color: $color-gray;
+          font-family: $font-second;
+          font-size: 10px;
+          font-weight: 300;
+          letter-spacing: 0.6px;
+          text-transform: uppercase;
+        }
+
+        &__title {
+          padding-top: 59px;
+          position: relative;
+
+          &-background {
+            top: 0;
+            left: 0;
+            width: auto;
+          }
+        }
+
+        &__subtitle {
+          font-family: $font-second;
+          font-style: normal;
+          font-weight: 300;
+          text-transform: uppercase;
+          margin-bottom: 0;
+        }
+
+        &__slider {
+          width: 100%;
+          height: 221px;
+          margin-top: 42px;
+          overflow: hidden;
+
+          .swiper-wrapper {
+            height: 157px;
+            display: flex;
+          }
+
+          &__control {
+            width: 60%;
+            margin-left: 180px;
+            display: flex;
+            border-bottom: 1px solid #ebebeb;
+            height: 33px;
+
+            div{
+              width: 33px;
+              height: 33px;
+              border: 1px solid #d9d9d9;
+              padding: 0 11px;
+              box-sizing: border-box;
+              cursor: pointer;
+              opacity: 0.64;
+              transition: border-color, opacity .6s;
+              
+              &:hover {
+                border-color: #d6d6d6;
+                opacity: 1;
+              }
+            }
+          }
+
+          &__prev {
+            transform: rotate(-90deg);
+            margin-left: auto;
+          }
+
+          &__next {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+  // reviews block end
+
+  // main page gallery slider
+    &__gallery {
+      width: 100%;
+      height: 535px;
+      margin: 0 auto 147px;
+      position: relative;
+      max-width: 1060px;
+      overflow: hidden;
+
+      .swiper-wrapper {
+        display: flex;
+        height: 100%;
+
+        .swiper-slide {
+          width: 100%;
+          height: 100%;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          min-width: 100%;
+        }
+      }
+
+      &__slider__control {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        height: 33px;
+        top: 50%;
+        transform: translateY(-50%);
+        fill: #FFFFFF;
+        box-sizing: border-box;
+        padding: 0 35px;
+
+        div {
+          width: 33px;
+          height: 100%;
+          cursor: pointer;
+          border: 1px solid #FFFFFF;
+          box-sizing: border-box;
+          padding: 0 11px;
+          
+          &:first-child {
+            transform: rotate(-90deg);
+          }
+          
+          &:last-child {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+  // main page gallery slider end
+
+  // contacts block
+    &__contacts {
+    margin: 0 auto 102px;
+
+    .contacts {
+      width: 100%;
+      max-width: 1060px;
+      margin: 0 auto;
+      display: flex;
+      position: relative;
+
+      &__image__wrapper {
+        width: 385px;
+        height: 504px;
+        margin: 0 70px 0 0;
+        position: relative;
+        min-width: 385px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          width: 253px;
+          height: 295px;
+          background-color: #dbf2fc;
+          opacity: 0.29;
+          z-index: 0;
+          transform: translate(-67px, -58px);
+        }
+
+        &-img {
+          width: 100%;
+          height: 100%;
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          z-index: 1;
+          position: relative;
+        }
+
+      }
+
+      &__vertical {
+        position: absolute;
+        height: 100%;
+        text-align: center;
+        writing-mode: vertical-lr;
+        font-size: 10px;
+        font-weight: 300;
+        letter-spacing: 0.6px;
+        color: $color-gray;
+        font-family: $font-second;
+        text-transform: uppercase;
+        right: 0;
+      }
+    }
+  }
+  // contacts block end
+
+  &__callback {
+    margin-bottom: 70px;
+  }
 }

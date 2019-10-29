@@ -1,0 +1,113 @@
+extends /containers/layout
+
+block variables
+
+block content
+
+    div.page-review.js-page-review
+
+        .quest-review
+            .quest-review__header
+                .quest-review__header__half
+                    h3.quest-review__title
+                        span.quest-review__title-background
+                            | Отзывы
+                        span.quest-review__title-text
+                            | Отзывы
+                    p.quest-review__subtitle
+                        span
+                            | Вы можете  оставить отзыв о нашем кафе, оставьте свои контакты для связи с Вами
+
+                    form.quest-review__form.js-quest-review
+                        -
+                            var inputs = [
+                                {
+                                    placeholder: "Ваше имя",
+                                    type: "text",
+                                    name: "name",
+                                    required: true
+                                },
+                                {
+                                    placeholder: "Ваш телефон",
+                                    type: "phone",
+                                    name: "phone",
+                                    required: false
+                                },
+                                {
+                                    placeholder: "Ваш E-mail",
+                                    type: "email",
+                                    name: "email",
+                                    required: true
+                                },
+                                {
+                                    placeholder: "Ваш отзыв",
+                                    type: "textarea",
+                                    name: "review",
+                                    required: true
+                                }
+                            ]
+                        each input in inputs
+                            if input.type !== "textarea"
+                                .quest-review__form__input
+                                    input.quest-review__form__input-field(
+                                        name= input.name
+                                        placeholder= input.placeholder
+                                        required= input.required
+                                    )
+                            else
+                                .quest-review__form__input.quest-review__form__input_textarea
+                                    p.quest-review__form__input_textarea-title= input.placeholder
+                                    textarea.quest-review__form__input-field(name= input.name required= input.required)
+                        button.quest-review__form__btn(type="submit")
+                            span
+                                | Отправить
+                .quest-review__header__half
+                    .quest-review__header__image(style="background-image: url('" + assetsDir + "images/callbackImage.png')")
+                        img(src=assetsDir + "images/callbackImage.png" hidden )
+
+            .quest-review__body
+                h2.quest-review__body__title
+                    | МНЕНИЕ НАШИХ ГОСТЕЙ
+                -
+                    var reviews = [
+                        {
+                            class: "page-review__reviews__review",
+                            date: "25.08.19",
+                            photo: "reviewPhoto1",
+                            name: "Ангелина Иванова",
+                            reviewText: "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбо" +
+                                        "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая."
+                        },
+                        {
+                            class: "page-review__reviews__review",
+                            date: "25.08.19",
+                            photo: "reviewPhoto2",
+                            name: "Ангелина Иванова",
+                            reviewText: "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбо" +
+                                        "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая."
+                        },
+                        {
+                            class: "page-review__reviews__review",
+                            date: "25.08.19",
+                            photo: "reviewPhoto1",
+                            name: "Ангелина Иванова",
+                            reviewText: "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбо" +
+                                        "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая."
+                        },
+                        {
+                            class: "page-review__reviews__review",
+                            date: "25.08.19",
+                            photo: "reviewPhoto2",
+                            name: "Ангелина Иванова",
+                            reviewText: "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбо" +
+                                        "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая."
+                        },
+                    ]
+                each review in reviews
+                    include /components/Review/index
+
+
+            .page-quest-review__callback
+                - var block = {class: "page-review__callback"}
+                include /components/Callback/index
+        include  /components/RollUp/index

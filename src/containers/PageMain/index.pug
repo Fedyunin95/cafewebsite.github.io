@@ -56,7 +56,10 @@ block content
         -
           var block = {
             class : "menu",
-            title: "Меню",
+            title: {
+              text: "Меню",
+              bg: "Меню"
+            },
             subtitle: "Это меню создано специально для вас",
             description: [
               "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая."
@@ -85,6 +88,7 @@ block content
             ]
           } 
         include infoBlock.pug
+
         .menu__images.js-horizontal-swiper
           .swiper-wrapper
             -
@@ -184,7 +188,10 @@ block content
           -
             var block = {
               class : "events",
-              title: "Мероприятия",
+              title: {
+                text: "Мероприятия",
+                bg: "Мероприятия"
+              },
               subtitle: "Мы предлагаем Вам провести у нас время всей семьей",
               description: [
                 "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая. Также вы можете заказать у нас торт или приобрести подарочные сертификаты."
@@ -216,7 +223,10 @@ block content
           -
             var block = {
               class : "about",
-              title: "О нас",
+              title: {
+                text: "О нас",
+                bg: "О нас"
+              },
               subtitle: "",
               description: [
                 "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая. Также вы можете заказать у нас торт или приобрести подарочные сертификаты.",
@@ -228,24 +238,16 @@ block content
             } 
 
           include infoBlock.pug
-          // .about__info
-          //   .about__title
-          //     span.about__title-background
-          //       | О нас
-          //     span.about__title-text
-          //   .about__subtitle
-          //     | Мы предлагаем Вам провести у нас время всей семьей
-          //   .about__description
-          //     | В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая. Также вы можете заказать у нас торт или приобрести подарочные сертификаты.
-          //   a.about__link(href="/") Подробнее
+
           p.about__vertical
             | О нас
-    
+
+
     .page-main__team
       .team
         h3.main__title.team__title
           span.main__info__title-background.team__title-background
-            | Наша команда
+            | Команда
           span.main__info__title-text.team__title-text
             | Наша команда
         .main__info__subtitle.team__subtitle
@@ -295,3 +297,88 @@ block content
                   use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
         p.team__vertical
           | Наша команда
+
+    .page-main__reviews
+      .reviews
+        p.reviews__vertical
+          | Отзывы
+        h3.main__title.reviews__title
+          span.main__info__title-background.reviews__title-background
+            | Отзывы
+          span.main__info__title-text.reviews__title-text
+            | Отзывы
+        p.main__info__subtitle.reviews__subtitle
+          | Мнение наших гостей
+        .reviews__slider.js-singl-swiper_horizontal
+          .swiper-wrapper
+            -
+              var reviews = [
+                {
+                  class: "swiper-slide page-main__reviews__review",
+                  date: "25.08.19",
+                  photo: "reviewPhoto1",
+                  name: "Ангелина Иванова",
+                  reviewText: "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор   В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая."
+                },
+                {
+                  class: "swiper-slide page-main__reviews__review",
+                  date: "25.08.19",
+                  photo: "reviewPhoto2",
+                  name: "Ангелина Иванова",
+                  reviewText: "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор   В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая."
+                },
+                {
+                  class: "swiper-slide page-main__reviews__review",
+                  date: "25.08.19",
+                  photo: "reviewPhoto1",
+                  name: "Ангелина Иванова",
+                  reviewText: "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор   В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая."
+                },
+                {
+                  class: "swiper-slide page-main__reviews__review",
+                  date: "25.08.19",
+                  photo: "reviewPhoto2",
+                  name: "Ангелина Иванова",
+                  reviewText: "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор   В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные десерты, выпечка, кофе и большой выбор различных видов чая."
+                },
+              ]
+            each review in reviews
+              include /components/Review/index
+          .reviews__slider__control
+            .reviews__slider__prev.js-prev-slide
+              svg
+                use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+            .reviews__slider__next.js-next-slide
+              svg
+                use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+
+    .page-main__gallery.js-singl-swiper_horizontal
+      .swiper-wrapper
+        -
+          var images = [
+            "galleryIMG",
+            "galleryIMG",
+            "galleryIMG",
+            "galleryIMG",
+          ]
+        each slide in images
+          .swiper-slide(style="background-image: url('" + assetsDir + "images/" + slide + ".png')")
+            img(src=assetsDir + "images/" + slide + ".png", hidden)
+      .page-main__gallery__slider__control
+        .page-main__gallery__slider__prev.js-prev-slide
+          svg
+            use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+        .page-main__gallery__slider__next.js-next-slide
+          svg
+            use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
+    .page-main__contacts
+      .contacts
+        .contacts__image__wrapper
+          .contacts__image__wrapper-img(style="background-image: url('" + assetsDir + "images/contactsIMG.png')")
+            img(src=assetsDir + "images/contactsIMG.png" hidden)
+        include /components/Contacts/index
+        p.contacts__vertical
+          | Контакты
+    .page-main__callback
+        - var block = {class: "page-main__callback"}
+        include /components/Callback/index

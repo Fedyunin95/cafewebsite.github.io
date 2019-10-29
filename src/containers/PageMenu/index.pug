@@ -1,0 +1,40 @@
+extends /containers/layout
+
+block variables
+
+block content
+
+    div.page-menu
+
+        .page-menu__wrapper
+            .page-menu__image(style="background-style=url('" + assetsDir + "images/pageMenuIMG.png')")
+                img(src=assetsDir + "images/pageMenuIMG.png")
+
+            .page-menu__info
+                h3.page-menu__title
+                    span.page-menu__title-background
+                        | Меню
+                    span.page-menu__title-text
+                        | Меню
+                p.page-menu__subtitle
+                    | Здесь будет текст о меню, текст о меню, текст о этом меню
+            .menu
+                .menu__items
+                    -
+                        var items = [
+                            "БИЗНЕС-ЛАНЧ",
+                            "ГОРЯЧЕЕ",
+                            "СУПЫ",
+                            "САЛАТЫ",
+                            "ДЕСЕРТЫ",
+                            "НАПИТКИ"
+                        ]
+                a.menu__download(href="/")
+                    span.menu__download-text
+                        | Скачать меню в PDF
+                    .menu__download-icon
+                        svg
+                            use(xlink:href=assetsDir + "images/sprite.symbol.svg#download")
+                .swiper-wrapper
+
+        include /components/RollUp/index

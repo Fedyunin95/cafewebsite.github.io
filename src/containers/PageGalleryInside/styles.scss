@@ -1,0 +1,22 @@
+.page-gallery_inside {
+  margin: 30px auto 70px;
+  display: flex;
+  width: 100%;
+  max-width: 1060px;
+  flex-wrap: wrap;
+
+  &__item {
+    width: 31.5%;
+    min-width: 286px;
+    height: 208px;
+    margin: 0 28px 28px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+
+    &:nth-child(3n), &:last-child {
+      margin-right: 0;
+    }
+  }
+}

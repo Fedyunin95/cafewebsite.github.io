@@ -1,0 +1,34 @@
+.callback.js-callback(class= block.class)
+    h2.callback__title(class= block.class + "__title")
+        | Мы можем перезвонить Вам сегодня
+    form.callback__form(class= block.class + "__form" novalidate=true)
+        .callback__form__time(class= block.class + "__time")
+            .time
+                label.time__input-label
+                    span
+                        | сегодня
+                    svg
+                        use(xlink:href=assetsDir + "images/sprite.symbol.svg#arrow")
+                    span
+                       | точно в
+                .time__input__wrapper.time__input__wrapper_first.js-callback-input
+                    input.time__input.js-input(type="number" min=0 max=23 name="hour" value=10)
+                    .time__input-inc.js-input-inc
+                        svg
+                            use(xlink:href=assetsDir + "images/sprite.symbol.svg#arrow")
+                    .time__input-dec.js-input-dec
+                        svg
+                            use(xlink:href=assetsDir + "images/sprite.symbol.svg#arrow")
+                .time__input__wrapper.js-callback-input
+                    input.time__input.js-input(type="number" min=0 max=59 name="minute" value=30)
+                    .time__input-inc.js-input-inc
+                        svg
+                            use(xlink:href=assetsDir + "images/sprite.symbol.svg#arrow")
+                    .time__input-dec.js-input-dec
+                        svg
+                            use(xlink:href=assetsDir + "images/sprite.symbol.svg#arrow")
+            .phone
+                input.phone__input(type="phone" placeholder="Ваш телефон")
+                button.button.callback__submit(type="submit")
+                    span
+                        | Отправить
