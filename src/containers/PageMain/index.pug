@@ -42,6 +42,7 @@ block content
                 img(src=assetsDir + "images/" + slide + ".png", hidden)
               h4.swiper-slide__text
                 span Стейк из семги с гарниром на Ваш выбор
+              button.swiper-slide__reserve-btn Забронировать
         .swiper__controler
           .swiper-button-next.js-next-slide
             svg
@@ -139,21 +140,21 @@ block content
                 use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow")
     .page-main__events
       .events
-        .events__header
-          h4.events__header__title
-            | 2019
-          .events__dots
-            -
-              var dots = ["Апрель", "Мая", "Июнь"]
-            each dot in dots
-              .dot
-                h5.dot__title= dot
-                span.dot__circle
-          .events__more
-            svg
-              use(xlink:href=assetsDir + "images/sprite.symbol.svg#arrow_long")
         .events__body
           .events__slider.js-singl-swiper_horizontal
+            .events__header
+              h4.events__header__title
+                | 2019
+              .events__dots
+                -
+                  var dots = ["Апрель", "Мая", "Июнь"]
+                each dot in dots
+                  .dot
+                    h5.dot__title= dot
+                    span.dot__circle
+              .events__more
+                svg
+                  use(xlink:href=assetsDir + "images/sprite.symbol.svg#arrow_long")
             .swiper-wrapper
               -
                 var slides = [

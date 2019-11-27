@@ -16,29 +16,29 @@ header.header.js-header(class=" " + header.class)
                 -
                     var items = [
                         {
-                            link: "main",
+                            link: "menu",
                             text: "Меню",
                         },
                         {
-                            link: "main",
+                            link: "about",
                             text: "О нас",
                         },
                         {
-                            link: "main",
+                            link: "events",
                             text: "Мероприятия",
                         },
                         {
-                            link: "main",
+                            link: "review",
                             text: "Отзывы",
                         },
                         {
-                            link: "main",
+                            link: "contacts",
                             text: "Контакты",
                         },
                     ]
                 each item in items
                     li.list__item.js-list-item
-                        a.list__item__link(href= item.link)= item.text
+                        a.list__item__link(href= item.link + ".html")= item.text
             a.button.header__btn(href="/")
                 | Забронировать
             div.header__contacts
@@ -74,6 +74,6 @@ header.header.js-header(class=" " + header.class)
             each img in images
                 div.image-slide.js-list-item-bg(style="background-image: url(images/" + img + ")")
                     img(src="images/" + img, hidden)
-    div.header__logo.logo
+    a.header__logo.logo(href="main.html")
         div.header__logo__icon.logo__icon
         p.header__logo__text.logo__text Leto

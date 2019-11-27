@@ -21,6 +21,7 @@
                     title: "Телефоны:",
                     info: ["+7 909 782 8450", "+7 909 782 8450"],
                 },
+
             ]
         each contact in contacts
             .contacts__info__contact
@@ -29,6 +30,30 @@
                     p.contact__info
                         each  text in contact.info
                             span= text
+
+        .social-links_mobile
+            h5.social-links__title_mobile
+                | Мы в соц. сетях
+            -
+                var links = [
+                    {
+                        url: "/",
+                        icon: "VK"
+                    },
+                    {
+                        url: "/",
+                        icon: "instagram-logo"
+                    },
+                    {
+                        url: "/",
+                        icon: "facebook"
+                    }
+                ]
+            .social-links__wrapper_mobile
+                each link in links
+                    a.social-links__link_mobile(href= link.url)
+                        svg
+                            use(xlink:href=assetsDir + "images/sprite.symbol.svg#" + link.icon)
     .contacts__info__footer
         .social-links
             h5.social-links__title

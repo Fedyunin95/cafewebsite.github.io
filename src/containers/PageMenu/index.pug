@@ -4,37 +4,362 @@ block variables
 
 block content
 
-    div.page-menu
-
+    div.page-menu.js-page-menu
         .page-menu__wrapper
-            .page-menu__image(style="background-style=url('" + assetsDir + "images/pageMenuIMG.png')")
-                img(src=assetsDir + "images/pageMenuIMG.png")
-
-            .page-menu__info
-                h3.page-menu__title
-                    span.page-menu__title-background
-                        | Меню
-                    span.page-menu__title-text
-                        | Меню
-                p.page-menu__subtitle
-                    | Здесь будет текст о меню, текст о меню, текст о этом меню
+            .page-menu__image(style="background-image:url('" + assetsDir + "images/pageMenuIMG.png')")
+                img(src=assetsDir + "images/pageMenuIMG.png" hidden)
             .menu
-                .menu__items
-                    -
-                        var items = [
-                            "БИЗНЕС-ЛАНЧ",
-                            "ГОРЯЧЕЕ",
-                            "СУПЫ",
-                            "САЛАТЫ",
-                            "ДЕСЕРТЫ",
-                            "НАПИТКИ"
-                        ]
+                .page-menu__info
+                    h3.page-menu__title
+                        span.page-menu__title-background
+                            | Меню
+                        span.page-menu__title-text
+                            | Меню
+                    p.page-menu__subtitle
+                        | Здесь будет текст о меню, текст о меню, текст о этом меню
+                .menu__wrapper.js-menu
+                    .menu__navigation.swiper-pagination
+                    a.menu__download(href="/")
+                        span.menu__download-text
+                            | Скачать меню в PDF
+                        .menu__download-icon
+                            svg
+                                use(xlink:href=assetsDir + "images/sprite.symbol.svg#download")
+                    .swiper-wrapper.menu__positions
+                        -
+                            var menu = [
+                                {
+                                    title: "Горячее",
+                                    list: [
+                                        {
+                                            name: "ТАРТАР ИЗ ЛОСОСЯ",
+                                            description: [
+                                                "на слайсе дайкона с имбирным айоли и кинзой",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350р"
+                                        },
+                                        {
+                                            name: "СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК",
+                                            description: [
+                                                "на подушке из овощей с классическим японским соусом",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350р"
+                                        },
+                                        {
+                                            name: "Говядина ТАР-ТАР В АЗИАТСКОМ СТИЛЕ",
+                                            description: [
+                                                "Слегка обожженная телятина со спринг-чипсой",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350p"
+                                        },
+                                        {
+                                            name: "СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК",
+                                            description: [
+                                                "на подушке из овощей с классическим японским соусом",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350р"
+                                        },
+                                        {
+                                            name: "Говядина ТАР-ТАР В АЗИАТСКОМ СТИЛЕ",
+                                            description: [
+                                                "Слегка обожженная телятина со спринг-чипсой",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350p"
+                                        }
+                                    ]
+                                },
+                                {
+                                    title: "Супы",
+                                    list: [
+                                        {
+                                            name: "КОРЕЙСКИЙ СУП КУКСИ",
+                                            description: [
+                                                "на слайсе дайкона с имбирным айоли и кинзой",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350p"
+                                        },
+                                        {
+                                            name: "СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК",
+                                            description: [
+                                                "на подушке из овощей с классическим японским соусом",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350р"
+                                        },
+                                        {
+                                            name: "Говядина ТАР-ТАР В АЗИАТСКОМ СТИЛЕ",
+                                            description: [
+                                                "Слегка обожженная телятина со спринг-чипсой",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350p"
+                                        },
+                                        {
+                                            name: "СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК",
+                                            description: [
+                                                "на подушке из овощей с классическим японским соусом",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350р"
+                                        }
+                                    ]
+                                },
+                                {
+                                    title: "Салаты",
+                                    list: [
+                                        {
+                                            name: "КОРЕЙСКИЙ СУП КУКСИ",
+                                            description: [
+                                                "на слайсе дайкона с имбирным айоли и кинзой",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350p"
+                                        },
+                                        {
+                                            name: "СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК",
+                                            description: [
+                                                "на подушке из овощей с классическим японским соусом",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350р"
+                                        },
+                                        {
+                                            name: "Говядина ТАР-ТАР В АЗИАТСКОМ СТИЛЕ",
+                                            description: [
+                                                "Слегка обожженная телятина со спринг-чипсой",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350p"
+                                        },
+                                        {
+                                            name: "СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК",
+                                            description: [
+                                                "на подушке из овощей с классическим японским соусом",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350р"
+                                        }
+                                    ]
+                                },
+                                {
+                                    title: "Десерты",
+                                    list: [
+                                        {
+                                            name: "КОРЕЙСКИЙ СУП КУКСИ",
+                                            description: [
+                                                "на слайсе дайкона с имбирным айоли и кинзой",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350p"
+                                        },
+                                        {
+                                            name: "СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК",
+                                            description: [
+                                                "на подушке из овощей с классическим японским соусом",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350р"
+                                        },
+                                        {
+                                            name: "Говядина ТАР-ТАР В АЗИАТСКОМ СТИЛЕ",
+                                            description: [
+                                                "Слегка обожженная телятина со спринг-чипсой",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350p"
+                                        },
+                                        {
+                                            name: "СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК",
+                                            description: [
+                                                "на подушке из овощей с классическим японским соусом",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350р"
+                                        }
+                                    ]
+                                },
+                                {
+                                    title: "Напитки",
+                                    list: [
+                                        {
+                                            name: "КОРЕЙСКИЙ СУП КУКСИ",
+                                            description: [
+                                                "на слайсе дайкона с имбирным айоли и кинзой",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350p"
+                                        },
+                                        {
+                                            name: "СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК",
+                                            description: [
+                                                "на подушке из овощей с классическим японским соусом",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350р"
+                                        },
+                                        {
+                                            name: "Говядина ТАР-ТАР В АЗИАТСКОМ СТИЛЕ",
+                                            description: [
+                                                "Слегка обожженная телятина со спринг-чипсой",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350p"
+                                        },
+                                        {
+                                            name: "СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК",
+                                            description: [
+                                                "на подушке из овощей с классическим японским соусом",
+                                                "Основная специя: Имбирь"
+                                            ],
+                                            price: "350р"
+                                        }
+                                    ]
+                                },
+                            ]
+                        .swiper-slide.menu__positions__item
+                            .menu__positions__item__header
+                                h3.title.js-swiper-bullet
+                                    | Бизнес-ланч
+                                p.subtitle
+                                    | пн-пт 12:00 - 15:00
+                            .menu__positions__item__body
+                                -
+                                    var lanch = [
+                                        {
+                                            day: "ПОНЕДЕЛЬНИК",
+                                            dishes: [
+                                                {
+                                                    name: "Салат морской",
+                                                    price: "50p"
+                                                },
+                                                {
+                                                    name: "Суп щи",
+                                                    price: "50p"
+                                                },
+                                                {
+                                                    name: "Паста Болоньезе",
+                                                    price: "50p"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            day: "Вторник",
+                                            dishes: [
+                                                {
+                                                    name: "Салат морской",
+                                                    price: "50p"
+                                                },
+                                                {
+                                                    name: "Суп щи",
+                                                    price: "50p"
+                                                },
+                                                {
+                                                    name: "Паста Болоньезе",
+                                                    price: "50p"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            day: "Среда",
+                                            dishes: [
+                                                {
+                                                    name: "Салат морской",
+                                                    price: "50p"
+                                                },
+                                                {
+                                                    name: "Суп щи",
+                                                    price: "50p"
+                                                },
+                                                {
+                                                    name: "Паста Болоньезе",
+                                                    price: "50p"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            day: "Четверг",
+                                            dishes: [
+                                                {
+                                                    name: "Салат морской",
+                                                    price: "50p"
+                                                },
+                                                {
+                                                    name: "Суп щи",
+                                                    price: "50p"
+                                                },
+                                                {
+                                                    name: "Паста Болоньезе",
+                                                    price: "50p"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            day: "Пятница",
+                                            dishes: [
+                                                {
+                                                    name: "Салат морской",
+                                                    price: "50p"
+                                                },
+                                                {
+                                                    name: "Суп щи",
+                                                    price: "50p"
+                                                },
+                                                {
+                                                    name: "Паста Болоньезе",
+                                                    price: "50p"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            day: "десерты",
+                                            dishes: [
+                                                {
+                                                    name: "Салат морской",
+                                                    price: "50p"
+                                                },
+                                                {
+                                                    name: "Суп щи",
+                                                    price: "50p"
+                                                },
+                                                {
+                                                    name: "Паста Болоньезе",
+                                                    price: "50p"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                each days in lanch
+                                    .menu__block
+                                        h4.menu__block__title= days.day
+                                        ul.menu__block__list
+                                            each dish in days.dishes
+                                                li.menu__block__list-item.dish
+                                                    p.dish__name= dish.name
+                                                    p.dish__price= dish.price
+                        each menu__position in menu
+                            .swiper-slide
+                                .menu__positions__item__header
+                                    h3.title.js-swiper-bullet= menu__position.title
+                                .menu__positions__item__body
+                                    each dish in menu__position.list
+                                        .menu__block
+                                            .menu__block__header
+                                                h4.menu__block__title= dish.name
+                                                p.menu__block__price=  dish.price
+                                            ul.menu__block__list
+                                                each description_stroke in dish.description
+                                                    li.menu__block__list-item.dish
+                                                        p.dish__name= description_stroke
                 a.menu__download(href="/")
                     span.menu__download-text
                         | Скачать меню в PDF
                     .menu__download-icon
                         svg
                             use(xlink:href=assetsDir + "images/sprite.symbol.svg#download")
-                .swiper-wrapper
-
         include /components/RollUp/index

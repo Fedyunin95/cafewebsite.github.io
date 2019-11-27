@@ -1,7 +1,7 @@
 footer.footer
     .footer__wrapper
         .footer__nav-block
-            .footer__logo.logo
+            a.footer__logo.logo(href="/")
                 div.header__logo__icon.logo__icon
                 p.header__logo__text.logo__text
                     | Leto
@@ -9,33 +9,33 @@ footer.footer
                 -
                     var links = [
                         {
-                            url: "/",
+                            url: "menu",
                             text: "меню",
                         },
                         {
-                            url: "/",
+                            url: "about",
                             text: "о нас",
                         },
                         {
-                            url: "/",
+                            url: "events",
                             text: "мероприятия",
                         },
                         {
-                            url: "/",
+                            url: "review",
                             text: "отзывы",
                         },
                         {
-                            url: "/",
+                            url: "gallery",
                             text: "галерея",
                         },
                         {
-                            url: "/",
+                            url: "contacts",
                             text: "контакты",
                         },
                     ]
                 each link in links
                     li.footer__nav-link
-                        a(href= link.url)= link.text
+                        a(href= link.url + ".html")= link.text
             p.footer__copyright
                 | Copyright © 2019
         .footer__social

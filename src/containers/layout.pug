@@ -47,11 +47,11 @@ html(
     script(src= assetsDir + "scripts/" + mainScriptFileName + ".js")
     div.wrapper
 
-      if pageName !== "main"
-        - var header= {class: "header_black"}
+      if pageName === "main"
+        - var header= {class: ""}
         include /components/Header/index
       else
-        - var header= {class: ""}
+        - var header= {class: "header_black"}
         include /components/Header/index
 
 
