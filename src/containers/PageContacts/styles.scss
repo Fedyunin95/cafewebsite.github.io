@@ -3,7 +3,12 @@
   min-height: 100%;
   display: flex;
   align-items: center;
-  padding-top: 100px;
+  padding: 0 30px;
+  box-sizing: border-box;
+
+  @media all and (max-width: $tablet - 1) {
+    padding: 0 14px;
+  }
 
   &__wrapper {
     width: 100%;
@@ -11,12 +16,17 @@
     max-width: 1060px;
     display: flex;
     position: relative;
+
+    @media all and (max-width: $tablet - 1) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
   }
 
   &__vertical {
     position: absolute;
     top: 0;
-    left: -35px;
+    left: -18px;
     height: 100%;
     font-size: 10px;
     font-weight: 300;
@@ -27,6 +37,10 @@
     text-transform: uppercase;
     text-align: center;
     user-select: none;
+
+    @media all and (max-width: $tablet - 1 ) {
+      display: none;
+    }
   }
 
   &__map {
@@ -34,5 +48,12 @@
     height: 366px;
     margin-right: 47px;
     align-self: flex-end;
+
+    @media all and (max-width: $tablet - 1) {
+      max-width: 100%;
+      align-self: center;
+      margin-right: 0;
+      margin-top: 30px;
+    }
   }
 }

@@ -1,6 +1,10 @@
 .page-gallery {
-  padding-top: 176px;
-  margin-bottom: 70px;
+  padding: 76px 14px 70px;
+
+  @media all and (max-width: $tablet - 1) {
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
 
   &__title {
     width: 100%;
@@ -18,6 +22,9 @@
       font-style: italic;
       left: 0;
       z-index: -1;
+      @media all and (max-width: $tablet - 1) {
+        display: none;
+      }
     }
 
     &-text {
@@ -33,6 +40,10 @@
     line-height: 23px;
     font-style: italic;
 
+    @media all and (max-width: $tablet - 1) {
+      margin: 10px;
+    }
+
     span {
       width: 100%;
       max-width: 300px;
@@ -43,18 +54,31 @@
   &__images {
     width: 100%;
     max-width: 1060px;
-    height: 376px;
+    height: auto;
     margin: 0 auto 70px;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 25px;
+
+    @media all and (max-width: $tablet - 1) {
+      grid-template-columns: auto;
+      grid-column-gap: 0;
+      grid-row-gap: 10px;
+      margin-bottom: 36px;
+    }
 
     &-item {
       width: 100%;
-      margin-right: 25px;
+      height: 376px;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       overflow: hidden;
       cursor: pointer;
+
+      @media all and (max-width: $laptop - 1) {
+        height: 180px;
+      }
 
       &__link {
         width: 100%;
@@ -69,12 +93,21 @@
         line-height: 22px;
         font-style: italic;
 
+        @media all and (max-width: $tablet - 1) {
+          transform: translateX(0);
+        }
+
         span {
           position: absolute;
           left: 30px;
           bottom: 57px;
           max-width: 150px;
           color: #fff;
+
+          @media all and (max-width: $tablet - 1) {
+            left: 15px;
+            bottom: 8px;
+          }
 
           &:before {
             content: "";
@@ -120,7 +153,13 @@
       position: relative;
       width: auto;
       height: auto;
+      max-width: 100%;
     }
+
+    &__image {
+      max-width: 100%;
+    }
+
 
     &__close {
       width: 20px;
@@ -157,6 +196,11 @@
         fill: #fff;
         cursor: pointer;
 
+        @media all and (max-width: $mobileL - 1) {
+          width: 20px;
+          height: 20px;
+          left: 30px;
+        }
       }
 
       &_disable {
@@ -169,6 +213,10 @@
         left: unset;
         right: 20px;
         transform: translateY(-50%) rotate(90deg);
+
+        @media all and (max-width: $mobileL - 1) {
+          right: 30px;
+        }
       }
 
     }

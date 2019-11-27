@@ -1,5 +1,7 @@
 // reserve block
   .reserve {
+    padding: 0 14px;
+
     &__title {
       font-style: italic;
       color: #2d2d2d;
@@ -8,6 +10,13 @@
       max-width: 492px;
       margin: 0 auto 35px;
       line-height: 44px;
+
+      @media all and (max-width: $mobileL - 1) {
+        font-size: 24px;
+        margin: 0 auto 25px;
+        line-height: 33px;
+        font-weight: 600;
+      }
     }
 
     &__btn {

@@ -4,6 +4,10 @@
   box-sizing: border-box;
   padding: 41px 20px;
 
+  @media all and (max-width: $laptop - 1) {
+    padding: 43px 14px;
+  }
+
   &__wrapper {
     max-width: 900px;
     margin: 0 auto;
@@ -14,6 +18,10 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+
+    @media all and (max-width: $tablet - 1){
+      justify-content: unset;
+    }
   }
 
   &__logo {
@@ -26,11 +34,28 @@
     padding: 21px 6px 21px;
     font-size: 14px;
     user-select: none;
+    text-decoration: none;
+
+    @media all and (max-width: $laptop - 1) {
+      margin-right: 23px;
+      align-self: flex-start;
+    }
+
+    @media all and (max-width: $mobileL - 1){
+      width: 48px;
+      height: 48px;
+      font-size: 8px ;
+    }
 
     .logo__icon {
       width: 14px;
       height: 14px;
       margin-right: 5px;
+      @media all and (max-width: $mobileL - 1){
+        width: 11px;
+        height: 11px;
+        margin-right: 2px;
+      }
     }
   }
 
@@ -45,31 +70,46 @@
     letter-spacing: .11px;
     min-width: 564px;
 
+    @media all and (max-width: $tablet - 1) {
+      min-width: unset;
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: 17px 17px;
+      grid-row-gap: 14px;
+      grid-column-gap: 24px;
+    }
+
+    @media all and (max-width: $mobileL - 1) {
+      grid-template-columns: auto auto;
+    }
+
     &-link {
-      position: relative;
       a {
+        position: relative;
         color: inherit;
         text-decoration: none;
 
-      }
-
-      &:after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        background-color: $color-font;
-        left: 0;
-        bottom: -3px;
-        transform: scaleX(0);
-        transform-origin: right;
-        transition: transform .7s;
+        &:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background-color: $color-font;
+          left: 0;
+          bottom: -3px;
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform .7s;
+        }
       }
 
       &:hover {
-        &:after {
-          transform: scaleX(1);
-          transform-origin: left;
+        a {
+          &:after {
+            transform: scaleX(1);
+            transform-origin: left;
+          }
         }
       }
     }
@@ -81,6 +121,10 @@
     font-weight: 300;
     color: #7b7b7b;
     user-select: none;
+
+    @media all and (max-width: 800px) {
+      display: none;
+    }
   }
 
   &__social {
@@ -113,13 +157,20 @@
     &:before, &:after {
       content: "";
       position: absolute;
-      width: 100%;
+      width: 40%;
       max-width: 375px;
       height: 1px;
       background-color: #c5c5c5;
       left: 0;
       top: 50%;
       transform: translateY(-50%);
+
+      @media all and (max-width: $tablet - 1) {
+        width: 35%;
+      }
+      @media all and (max-width: $mobileL - 1) {
+        width: 27%;
+      }
     }
 
     &:after {

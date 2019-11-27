@@ -3,6 +3,10 @@
   min-width: 100%;
   display: flex;
 
+  @media all and (max-width: $mobileL - 1) {
+    flex-direction: column;
+  }
+
   &__photo {
     width: 144px;
     height: 144px;
@@ -13,11 +17,21 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    @media all and (max-width: $mobileL - 1) {
+      width: 162px;
+      height: 162px;
+      margin: 0 auto 25px;
+    }
   }
 
   &__info {
     width: 50%;
     color: #000;
+
+    @media all and (max-width: $mobileL - 1) {
+      width: 100%;
+    }
 
     &__date {
       font-size: 13px;
@@ -25,6 +39,7 @@
       letter-spacing: 0.33px;
       font-family: $font-main;
       margin-bottom: 5px;
+      height: auto;
     }
 
     &__name {
@@ -33,6 +48,7 @@
       letter-spacing: 0.45px;
       margin-bottom: 11px;
       font-family: $font-main;
+      height: auto;
     }
 
     &__text {
@@ -40,6 +56,7 @@
       font-weight: 300;
       line-height: 25px;
       font-family: $font-second;
+      height: auto;
     }
   }
 }

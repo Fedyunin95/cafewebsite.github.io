@@ -2,6 +2,8 @@
   width: 100%;
   max-width: 1060px;
   margin: 0 auto;
+  padding: 0 14px;
+  box-sizing: border-box;
 
   &__title {
     font-size: 30px;
@@ -10,6 +12,11 @@
     font-style: italic;
     font-weight: 600;
     margin-bottom: 15px;
+
+    @media all and (max-width: $mobileL - 1) {
+      font-size: 24px;
+      line-height: 30px;
+    }
   }
 
   &__form {
@@ -19,6 +26,12 @@
         width: 100%;
         height: 36px;
         justify-content: center;
+
+        @media all and (max-width: $mobileL - 1) {
+          flex-wrap: wrap;
+          margin-bottom: 25px;
+          height: auto;
+        }
 
         &__input-label {
           font-size: 14px;
@@ -32,11 +45,22 @@
           align-items: center;
           margin-right: 43px;
 
+          @media all and (max-width: $mobileL - 1) {
+            width: 100%;
+            text-align: center;
+            margin: 0 0 16px 0;
+            justify-content: center;
+          }
+
           svg {
             width: 8px;
             height: 4px;
             transform: rotate(90deg);
             margin: 0 26px 0 8px;
+
+            @media all and (max-width: $mobileL - 1) {
+              margin: 0 12px 0 8px;
+            }
           }
         }
 
@@ -80,11 +104,6 @@
           box-sizing: border-box;
           text-align: right;
 
-          //&:hover {
-          //  @mixin hide-input-spinners;
-          //}
-
-
           &-inc, &-dec {
             position: absolute;
             width: 9px;
@@ -111,6 +130,10 @@
         align-items: center;
         margin-top: 26px;
 
+        @media all and (max-width: $tablet - 1) {
+          flex-direction: column;
+        }
+
         &__input {
           width: 100%;
           max-width: 386px;
@@ -123,6 +146,9 @@
           font-weight: 300;
           text-transform: uppercase;
           font-family: $font-second;
+          @media all and (max-width: $tablet - 1) {
+            margin: 0 0 16px 0;
+          }
         }
       }
     }

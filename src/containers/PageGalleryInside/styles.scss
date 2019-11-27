@@ -4,6 +4,18 @@
   width: 100%;
   max-width: 1060px;
   flex-wrap: wrap;
+  justify-content: center;
+
+  @media all and (max-width: $laptop - 1) {
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    grid-column-gap: 11px;
+    grid-row-gap: 11px;
+  }
+
+  @media all and (max-width: $tablet - 1) {
+    grid-template-columns: 48% 48%;
+  }
 
   &__item {
     width: 31.5%;
@@ -14,6 +26,20 @@
     background-size: cover;
     background-position: center;
     cursor: pointer;
+
+    @media all and (max-width: $desktop - 1) {
+      min-width: 140px;
+      width: 30%;
+    }
+
+    @media all and (max-width: $laptop - 1) {
+      width: 100%;
+      margin: 0;
+    }
+
+    @media all and (max-width: $mobileL - 1) {
+      height: 180px;
+    }
 
     &:nth-child(3n), &:last-child {
       margin-right: 0;

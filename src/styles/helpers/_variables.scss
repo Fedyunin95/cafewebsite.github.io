@@ -1,6 +1,10 @@
 // Breakpoints
-$bp-mobile-max: 1200px;
-$bp-desktop-min: ($bp-mobile-max + 1px);
+$desktop: 1200px;
+$laptop: 1024px;
+$tablet: 768px;
+$mobileL: 425px;
+$mobileM: 375px;
+$mobileS: 320px;
 
 $container-winger-padding-mobile: 10px;
 $container-winger-padding: 40px;
