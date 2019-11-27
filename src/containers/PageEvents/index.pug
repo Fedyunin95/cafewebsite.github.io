@@ -1,0 +1,279 @@
+extends /containers/layout
+
+block variables
+
+block content
+
+    div.page-events.js-page-events
+        .page-events__header
+            h2.page-events__header-title
+                span.page-events__header-title__text Мероприятия
+                span.page-events__header-title__background Мероприятия
+            p.page-events__header-subtitle
+                | Мы предлагаем Вам провести у нас время всей семьей
+        .page-events__calendar
+            .page-events__calendar-header
+                h3.calendar__year
+                    | 2019
+                .calendar__months.js-months-swiper
+                    -
+                        var months = [
+                            "Январь",
+                            "Февраль",
+                            "Март",
+                            "Апрель",
+                            "Май",
+                            "Июнь",
+                            "Июль",
+                            "Август",
+                            "Сентябрь",
+                            "Октябрь",
+                            "Ноябрь",
+                            "Декабрь"
+                        ]
+                    .swiper-wrapper
+                        each month in months
+                            .swiper-slide.calendar__months__item
+                                p.title= month
+                                .border
+                .swiper-navigation
+                    .swiper-button-next.js-next-month
+                        svg
+                            use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow_long")
+            .page-events__calendar-body
+                table.months
+                    -
+                        var monthDays = [
+                            [
+                                {
+                                    className: "empty",
+                                    value: ""
+                                },
+                                {
+                                    className: "empty",
+                                    value: ""
+                                },
+                                {
+                                    className: "empty",
+                                    value: ""
+                                },
+                                {
+                                    className: "holiday",
+                                    value: "1"
+                                },
+                                {
+                                    className: "holiday",
+                                    value: "2"
+                                },
+                                {
+                                    className: "holiday active",
+                                    value: "3"
+                                },
+                                {
+                                    className: "disabled",
+                                    value: "4"
+                                }
+                            ],
+                            [
+                            {
+                            className: "disabled",
+                            value: "5"
+                            },
+                            {
+                            className: "holiday",
+                            value: "6"
+                            },
+                            {
+                            className: "disabled",
+                            value: "7"
+                            },
+                            {
+                            className: "disabled",
+                            value: "8"
+                            },
+                            {
+                            className: "holiday",
+                            value: "9"
+                            },
+                            {
+                            className: "holiday",
+                            value: "10"
+                            },
+                            {
+                            className: "disabled",
+                            value: "11"
+                            }
+                            ],
+                            [
+                            {
+                            className: "disabled",
+                            value: "12"
+                            },
+                            {
+                            className: "holiday",
+                            value: "13"
+                            },
+                            {
+                            className: "",
+                            value: "14"
+                            },
+                            {
+                            className: "holiday",
+                            value: "15"
+                            },
+                            {
+                            className: "holiday",
+                            value: "16"
+                            },
+                            {
+                            className: "",
+                            value: "17"
+                            },
+                            {
+                            className: "disabled",
+                            value: "18"
+                            }
+                            ],
+                            [
+                            {
+                            className: "disabled",
+                            value: "19"
+                            },
+                            {
+                            className: "",
+                            value: "20"
+                            },
+                            {
+                            className: "disabled",
+                            value: "21"
+                            },
+                            {
+                            className: "",
+                            value: "22"
+                            },
+                            {
+                            className: "",
+                            value: "23"
+                            },
+                            {
+                            className: "",
+                            value: "24"
+                            },
+                            {
+                            className: "disabled",
+                            value: "25"
+                            }
+                            ],
+                            [
+                            {
+                            className: "disabled",
+                            value: "26"
+                            },
+                            {
+                            className: "",
+                            value: "27"
+                            },
+                            {
+                            className: "",
+                            value: "28"
+                            },
+                            {
+                            className: "",
+                            value: "29"
+                            },
+                            {
+                            className: "disabled",
+                            value: "30"
+                            },
+                            {
+                            className: "",
+                            value: "31"
+                            },
+                            {
+                            className: "empty",
+                            value: ""
+                            }
+                            ]
+                        ]
+                    tbody
+                        each week in monthDays
+                            tr
+                                each day in week
+                                    td(class=day.className)
+                                        span=day.value
+            p.page-events__calendar_vertical Мероприятия
+        .page-events__body
+            p.page-events__body-title
+                | СОБЫТИЯ НА ТЕКУЩИЮ НЕДЕЛЮ:
+            .page-events__body-cards
+                -
+                    var cards = [
+                        {
+                            date: "14 Август 20:00",
+                            title: "Игра головой",
+                            description: "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные",
+                            className: "",
+                            image: "eventsIMG1"
+                        },
+                        {
+                            date: "14 Август 20:00",
+                            title: "Игра головой",
+                            description: "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные",
+                            className: "card_sold-out",
+                            image: "eventsIMG1"
+                        },
+                        {
+                            date: "14 Август 20:00",
+                            title: "Игра головой",
+                            description: "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные",
+                            className: "",
+                            image: "eventsIMG1"
+                        },
+                        {
+                            date: "14 Август 20:00",
+                            title: "Игра головой",
+                            description: "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные",
+                            className: "",
+                            image: "eventsIMG1"
+                        },
+                        {
+                            date: "14 Август 20:00",
+                            title: "Игра головой",
+                            description: "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные",
+                            className: "card_sold-out",
+                            image: "eventsIMG1"
+                        },
+                        {
+                            date: "14 Август 20:00",
+                            title: "Игра головой",
+                            description: "В нашем меню блюда европейской кухни, бизнес-ланчи, оригинальные",
+                            className: "",
+                            image: "eventsIMG1"
+                        }
+                    ]
+                each card in cards
+                    .card(class=" " + card.className)
+                        .card__image(style="background-image: url('" + assetsDir + "images/" + card.image + ".png')")
+                            img(src=assetsDir + "images/" + card.image + ".png" hidden)
+                        .card__body
+                            .card__body__date= card.date
+                            .card__body__title= card.title
+                            .card__body__description= card.description
+                            .card__body__btn.js-reserve
+                                span
+                                    | забронировать
+        .page-events__callback
+            - var block = {class: "page-main__callback"}
+            include /components/Callback/index
+        -
+            var block = {
+                className: "page-events__popup",
+                date: "14 Август 20:00",
+                image: "eventsIMG1",
+                title: "Игра головой",
+                description: [
+                    "Tаким образом постоянное информационно-пропагандистское обеспечение нашей деятельности в значительной степени обуславливает создание форм развития.",
+                    "Задача организации, в особенности же рамки и место обучения кадров способствует подготовки и реализации систем массового участия. Не следует, однако забывать, что начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным"
+                ]
+            }
+        include /components/Popup/index
