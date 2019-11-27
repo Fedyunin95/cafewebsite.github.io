@@ -61,11 +61,11 @@
           <div class="header__menu__wrapper">
             <button class="header__menu__btn_close js-header-close"><span class="text">Закрыть</span><span class="icon"><span class="first"></span><span class="last"></span></span></button>
             <ul class="list">
-              <li class="list__item js-list-item"><a class="list__item__link" href="main">Меню</a></li>
-              <li class="list__item js-list-item"><a class="list__item__link" href="main">О нас</a></li>
-              <li class="list__item js-list-item"><a class="list__item__link" href="main">Мероприятия</a></li>
-              <li class="list__item js-list-item"><a class="list__item__link" href="main">Отзывы</a></li>
-              <li class="list__item js-list-item"><a class="list__item__link" href="main">Контакты</a></li>
+              <li class="list__item js-list-item"><a class="list__item__link" href="menu.html">Меню</a></li>
+              <li class="list__item js-list-item"><a class="list__item__link" href="about.html">О нас</a></li>
+              <li class="list__item js-list-item"><a class="list__item__link" href="events.html">Мероприятия</a></li>
+              <li class="list__item js-list-item"><a class="list__item__link" href="review.html">Отзывы</a></li>
+              <li class="list__item js-list-item"><a class="list__item__link" href="contacts.html">Контакты</a></li>
             </ul><a class="button header__btn" href="/">Забронировать</a>
             <div class="header__contacts">
               <div class="contact"><span class="title">Адрес</span><span class="info">г.Черняховск, ул. Калининградская, 5, ТЦ &quot;Радуга&quot;</span>
@@ -83,29 +83,473 @@
             <div class="image-slide js-list-item-bg" style="background-image: url(images/headerBG2.png)"><img src="images/headerBG2.png" hidden></div>
             <div class="image-slide js-list-item-bg" style="background-image: url(images/headerBG1.png)"><img src="images/headerBG1.png" hidden></div>
           </div>
-        </div>
-        <div class="header__logo logo">
+        </div><a class="header__logo logo" href="main.html">
           <div class="header__logo__icon logo__icon"></div>
-          <p class="header__logo__text logo__text">Leto</p>
-        </div>
+          <p class="header__logo__text logo__text">Leto</p></a>
       </header>
       <main class="main">
-        <div class="page-menu">
+        <div class="page-menu js-page-menu">
           <div class="page-menu__wrapper">
-            <div class="page-menu__image" style="background-style=url('assets/images/pageMenuIMG.png')"><img src="assets/images/pageMenuIMG.png"></div>
-            <div class="page-menu__info">
-              <h3 class="page-menu__title"><span class="page-menu__title-background">Меню</span><span class="page-menu__title-text">Меню</span></h3>
-              <p class="page-menu__subtitle">Здесь будет текст о меню, текст о меню, текст о этом меню</p>
-            </div>
+            <div class="page-menu__image" style="background-image:url('assets/images/pageMenuIMG.png')"><img src="assets/images/pageMenuIMG.png" hidden></div>
             <div class="menu">
-              <div class="menu__items">
+              <div class="page-menu__info">
+                <h3 class="page-menu__title"><span class="page-menu__title-background">Меню</span><span class="page-menu__title-text">Меню</span></h3>
+                <p class="page-menu__subtitle">Здесь будет текст о меню, текст о меню, текст о этом меню</p>
+              </div>
+              <div class="menu__wrapper js-menu">
+                <div class="menu__navigation swiper-pagination"></div><a class="menu__download" href="/"><span class="menu__download-text">Скачать меню в PDF</span>
+                  <div class="menu__download-icon">
+                    <svg>
+                      <use xlink:href="assets/images/sprite.symbol.svg#download"></use>
+                    </svg>
+                  </div></a>
+                <div class="swiper-wrapper menu__positions">
+                  <div class="swiper-slide menu__positions__item">
+                    <div class="menu__positions__item__header">
+                      <h3 class="title js-swiper-bullet">Бизнес-ланч</h3>
+                      <p class="subtitle">пн-пт 12:00 - 15:00</p>
+                    </div>
+                    <div class="menu__positions__item__body">
+                      <div class="menu__block">
+                        <h4 class="menu__block__title">ПОНЕДЕЛЬНИК</h4>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Салат морской</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Суп щи</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Паста Болоньезе</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <h4 class="menu__block__title">Вторник</h4>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Салат морской</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Суп щи</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Паста Болоньезе</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <h4 class="menu__block__title">Среда</h4>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Салат морской</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Суп щи</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Паста Болоньезе</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <h4 class="menu__block__title">Четверг</h4>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Салат морской</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Суп щи</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Паста Болоньезе</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <h4 class="menu__block__title">Пятница</h4>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Салат морской</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Суп щи</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Паста Болоньезе</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <h4 class="menu__block__title">десерты</h4>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Салат морской</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Суп щи</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Паста Болоньезе</p>
+                            <p class="dish__price">50p</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="menu__positions__item__header">
+                      <h3 class="title js-swiper-bullet">Горячее</h3>
+                    </div>
+                    <div class="menu__positions__item__body">
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">ТАРТАР ИЗ ЛОСОСЯ</h4>
+                          <p class="menu__block__price">350р</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">на слайсе дайкона с имбирным айоли и кинзой</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК</h4>
+                          <p class="menu__block__price">350р</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">на подушке из овощей с классическим японским соусом</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">Говядина ТАР-ТАР В АЗИАТСКОМ СТИЛЕ</h4>
+                          <p class="menu__block__price">350p</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Слегка обожженная телятина со спринг-чипсой</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК</h4>
+                          <p class="menu__block__price">350р</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">на подушке из овощей с классическим японским соусом</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">Говядина ТАР-ТАР В АЗИАТСКОМ СТИЛЕ</h4>
+                          <p class="menu__block__price">350p</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Слегка обожженная телятина со спринг-чипсой</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="menu__positions__item__header">
+                      <h3 class="title js-swiper-bullet">Супы</h3>
+                    </div>
+                    <div class="menu__positions__item__body">
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">КОРЕЙСКИЙ СУП КУКСИ</h4>
+                          <p class="menu__block__price">350p</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">на слайсе дайкона с имбирным айоли и кинзой</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК</h4>
+                          <p class="menu__block__price">350р</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">на подушке из овощей с классическим японским соусом</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">Говядина ТАР-ТАР В АЗИАТСКОМ СТИЛЕ</h4>
+                          <p class="menu__block__price">350p</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Слегка обожженная телятина со спринг-чипсой</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК</h4>
+                          <p class="menu__block__price">350р</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">на подушке из овощей с классическим японским соусом</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="menu__positions__item__header">
+                      <h3 class="title js-swiper-bullet">Салаты</h3>
+                    </div>
+                    <div class="menu__positions__item__body">
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">КОРЕЙСКИЙ СУП КУКСИ</h4>
+                          <p class="menu__block__price">350p</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">на слайсе дайкона с имбирным айоли и кинзой</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК</h4>
+                          <p class="menu__block__price">350р</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">на подушке из овощей с классическим японским соусом</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">Говядина ТАР-ТАР В АЗИАТСКОМ СТИЛЕ</h4>
+                          <p class="menu__block__price">350p</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Слегка обожженная телятина со спринг-чипсой</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК</h4>
+                          <p class="menu__block__price">350р</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">на подушке из овощей с классическим японским соусом</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="menu__positions__item__header">
+                      <h3 class="title js-swiper-bullet">Десерты</h3>
+                    </div>
+                    <div class="menu__positions__item__body">
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">КОРЕЙСКИЙ СУП КУКСИ</h4>
+                          <p class="menu__block__price">350p</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">на слайсе дайкона с имбирным айоли и кинзой</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК</h4>
+                          <p class="menu__block__price">350р</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">на подушке из овощей с классическим японским соусом</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">Говядина ТАР-ТАР В АЗИАТСКОМ СТИЛЕ</h4>
+                          <p class="menu__block__price">350p</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Слегка обожженная телятина со спринг-чипсой</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК</h4>
+                          <p class="menu__block__price">350р</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">на подушке из овощей с классическим японским соусом</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="menu__positions__item__header">
+                      <h3 class="title js-swiper-bullet">Напитки</h3>
+                    </div>
+                    <div class="menu__positions__item__body">
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">КОРЕЙСКИЙ СУП КУКСИ</h4>
+                          <p class="menu__block__price">350p</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">на слайсе дайкона с имбирным айоли и кинзой</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК</h4>
+                          <p class="menu__block__price">350р</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">на подушке из овощей с классическим японским соусом</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">Говядина ТАР-ТАР В АЗИАТСКОМ СТИЛЕ</h4>
+                          <p class="menu__block__price">350p</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Слегка обожженная телятина со спринг-чипсой</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="menu__block">
+                        <div class="menu__block__header">
+                          <h4 class="menu__block__title">СЕВИЧЕ ИЗ ТИГРОВЫХ КРЕВЕТОК</h4>
+                          <p class="menu__block__price">350р</p>
+                        </div>
+                        <ul class="menu__block__list">
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">на подушке из овощей с классическим японским соусом</p>
+                          </li>
+                          <li class="menu__block__list-item dish">
+                            <p class="dish__name">Основная специя: Имбирь</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div><a class="menu__download" href="/"><span class="menu__download-text">Скачать меню в PDF</span>
                 <div class="menu__download-icon">
                   <svg>
                     <use xlink:href="assets/images/sprite.symbol.svg#download"></use>
                   </svg>
                 </div></a>
-              <div class="swiper-wrapper"></div>
             </div>
           </div>
           <div class="rollup js-rollup">
@@ -119,18 +563,16 @@
       </main>
       <footer class="footer">
         <div class="footer__wrapper">
-          <div class="footer__nav-block">
-            <div class="footer__logo logo">
+          <div class="footer__nav-block"><a class="footer__logo logo" href="/">
               <div class="header__logo__icon logo__icon"></div>
-              <p class="header__logo__text logo__text">Leto</p>
-            </div>
+              <p class="header__logo__text logo__text">Leto</p></a>
             <ul class="footer__nav">
-              <li class="footer__nav-link"><a href="/">меню</a></li>
-              <li class="footer__nav-link"><a href="/">о нас</a></li>
-              <li class="footer__nav-link"><a href="/">мероприятия</a></li>
-              <li class="footer__nav-link"><a href="/">отзывы</a></li>
-              <li class="footer__nav-link"><a href="/">галерея</a></li>
-              <li class="footer__nav-link"><a href="/">контакты</a></li>
+              <li class="footer__nav-link"><a href="menu.html">меню</a></li>
+              <li class="footer__nav-link"><a href="about.html">о нас</a></li>
+              <li class="footer__nav-link"><a href="events.html">мероприятия</a></li>
+              <li class="footer__nav-link"><a href="review.html">отзывы</a></li>
+              <li class="footer__nav-link"><a href="gallery.html">галерея</a></li>
+              <li class="footer__nav-link"><a href="contacts.html">контакты</a></li>
             </ul>
             <p class="footer__copyright">Copyright © 2019</p>
           </div>
