@@ -1,0 +1,18 @@
+.popup.js-popup(class=" " + block.className)
+    .popup__wrapper
+        .popup__close.js-close-popup
+        .popup__image.js-image(style="background-image: url('" + assetsDir + "images/" + block.image + ".png')")
+            img(src=assetsDir + "images/" + block.image + ".png" hidden)
+        .popup__body
+            p.popup__date.js-date=block.date
+            h5.popup__title.js-title(data-event-id="")= block.title
+            div.popup__description.js-description
+                each paragraph in block.description
+                    p.popup__description__paragraph=paragraph
+            .popup__buttons
+                button.popup__btn.popup__btn_colored
+                    span
+                        | Забронировать
+                button.js-close-popup.popup__btn.popup__btn_bordered
+                    span
+                       | Скрыть
