@@ -5,17 +5,22 @@ function mainPage(page) {
   const horizontalSliders = page.querySelectorAll(".js-horizontal-swiper");
   const eventsSliders = page.querySelectorAll(".js-singl-swiper_horizontal");
   const teamSlider = page.querySelector(".js-team-swiper");
-  let bannerSwiper;
 
   for (let i = 0, len = bannerSliders.length; i < len; i++) {
     const nextBtn = bannerSliders[i].querySelector(".js-next-slide");
     const prevBtn = bannerSliders[i].querySelector(".js-prev-slide");
-    bannerSwiper = new Swiper(bannerSliders[i], {
+    new Swiper(bannerSliders[i], {
       loop: true,
       direction: "vertical",
       navigation: {
         nextEl: nextBtn,
         prevEl: prevBtn
+      },
+      breakpoints: {
+        768: {
+          direction: "horizontal",
+          spaceBetween: 14
+        }
       }
     });
   }
@@ -23,7 +28,7 @@ function mainPage(page) {
   for (let i = 0, len = horizontalSliders.length; i < len; i++) {
     const nextBtn = horizontalSliders[i].querySelector(".js-next-slide");
     const prevBtn = horizontalSliders[i].querySelector(".js-prev-slide");
-    bannerSwiper = new Swiper(horizontalSliders[i], {
+    new Swiper(horizontalSliders[i], {
       loop: false,
       slidesPerView: 2,
       slidesPerColumn: 2,
@@ -31,6 +36,11 @@ function mainPage(page) {
       navigation: {
         nextEl: nextBtn,
         prevEl: prevBtn
+      },
+      breakpoints: {
+        768: {
+          spaceBetween: 10
+        }
       }
     });
   }
@@ -39,7 +49,7 @@ function mainPage(page) {
     const nextBtn = eventsSliders[i].querySelector(".js-next-slide");
     const prevBtn = eventsSliders[i].querySelector(".js-prev-slide");
 
-    bannerSwiper = new Swiper(eventsSliders[i], {
+    new Swiper(eventsSliders[i], {
       loop: false,
       slidesPerView: "auto",
       spaceBetween: 25,
@@ -52,13 +62,18 @@ function mainPage(page) {
 
   const nextBtn = teamSlider.querySelector(".js-next-slide");
   const prevBtn = teamSlider.querySelector(".js-prev-slide");
-  bannerSwiper = new Swiper(teamSlider, {
+  new Swiper(teamSlider, {
     loop: true,
     slidesPerView: 1,
     spaceBetween: 0,
     navigation: {
       nextEl: nextBtn,
       prevEl: prevBtn
+    },
+    breakpoints: {
+      768: {
+        spaceBetween: 14
+      }
     }
   });
 }

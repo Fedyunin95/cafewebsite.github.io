@@ -1,6 +1,6 @@
 export default function Rollup(rollup) {
   rollup.addEventListener("click", () => {
-    document.querySelector(".js-header").scrollIntoView({
+    document.querySelector("body").scrollIntoView({
       behavior: "smooth",
       block: "start"
     });

@@ -1,7 +1,7 @@
 /* global ymaps:true */
 /* eslint no-undef:"error" */
 
-function Contacts(pageContacts) {
+function Contacts() {
   ymaps.ready(function() {
     const myMap = new ymaps.Map("map", {
       center: [54.6358252, 21.806184],

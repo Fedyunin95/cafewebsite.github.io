@@ -11,12 +11,12 @@ function Callback(callback) {
     const inputField = timeInputs[i].querySelector("input");
 
     // get max and min input counts
-    const maxCount = parseInt(inputField.getAttribute("max"));
-    const minCount = parseInt(inputField.getAttribute("min"));
+    const maxCount = parseInt(inputField.getAttribute("max"), 10);
+    const minCount = parseInt(inputField.getAttribute("min"), 10);
 
     incBtn.addEventListener("click", () => {
       inputField.value = updateInputCount(
-        parseInt(inputField.value),
+        parseInt(inputField.value, 10),
         "inc",
         maxCount,
         null
@@ -25,7 +25,7 @@ function Callback(callback) {
 
     decBtn.addEventListener("click", () => {
       inputField.value = updateInputCount(
-        parseInt(inputField.value),
+        parseInt(inputField.value, 10),
         "dec",
         null,
         minCount
@@ -33,9 +33,9 @@ function Callback(callback) {
     });
 
     inputField.addEventListener("change", () => {
-      if (parseInt(inputField.value) < minCount) {
+      if (parseInt(inputField.value, 10) < minCount) {
         inputField.value = minCount;
-      } else if (parseInt(inputField.value) > maxCount) {
+      } else if (parseInt(inputField.value, 10) > maxCount) {
         inputField.value = maxCount;
       }
     });
@@ -43,15 +43,17 @@ function Callback(callback) {
 }
 
 function updateInputCount(value, modificator, max, min) {
+  let val = value;
+
   if (modificator === "inc") {
-    if (value < max) {
-      value++;
+    if (val < max) {
+      val++;
     }
-  } else if (value > min) {
-    value--;
+  } else if (val > min) {
+    val--;
   }
 
-  return value;
+  return val;
 }
 
 export default Callback;

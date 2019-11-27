@@ -2,13 +2,12 @@ import Swiper from "swiper";
 
 function pageAbout(page) {
   const eventsSliders = page.querySelectorAll(".js-singl-swiper_horizontal");
-  let bannerSwiper;
 
   for (let i = 0, len = eventsSliders.length; i < len; i++) {
     const nextBtn = eventsSliders[i].querySelector(".js-next-slide");
     const prevBtn = eventsSliders[i].querySelector(".js-prev-slide");
 
-    bannerSwiper = new Swiper(eventsSliders[i], {
+    new Swiper(eventsSliders[i], {
       loop: false,
       slidesPerView: "auto",
       spaceBetween: 25,

@@ -2,10 +2,13 @@ import svg4everybody from "svg4everybody";
 import Header from "../components/Header/main";
 import Callback from "../components/Callback/main";
 import Rollup from "../components/RollUp/main";
+import Popup from "../components/Popup/main";
 import MainPage from "../containers/PageMain/main";
 import Contacts from "../containers/PageContacts/main";
 import About from "../containers/PageAbout/main";
 import Gallery from "../containers/PageGalleryInside/main";
+import Menu from "../containers/PageMenu/main";
+import Events from "../containers/PageEvents/main";
 
 document.addEventListener("DOMContentLoaded", () => {
   svg4everybody();
@@ -16,7 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const pageContacts = document.querySelector(".js-page-contacts");
   const pageAbout = document.querySelector(".js-page-about");
   const pageGalleryInside = document.querySelector(".js-page-gallery");
+  const pageMenuScripts = document.querySelector(".js-page-menu");
+  const pageEvents = document.querySelector(".js-page-events");
   const rollup = document.querySelector(".js-rollup");
+  const popup = document.querySelector(".js-popup");
 
   new Header(headerBlock);
 
@@ -40,7 +46,19 @@ document.addEventListener("DOMContentLoaded", () => {
     new Gallery(pageGalleryInside);
   }
 
+  if (pageMenuScripts) {
+    new Menu(pageMenuScripts);
+  }
+
+  if (pageEvents) {
+    new Events(pageEvents);
+  }
+
   if (rollup) {
     new Rollup(rollup);
+  }
+
+  if (popup) {
+    new Popup(popup);
   }
 });
