@@ -2,11 +2,11 @@ import fs from "fs";
 import path from "path";
 
 const data = {};
-data.nav = JSON.parse(fs.readFileSync("./build/data/nav.json", "utf8"));
-data.productsPreviews = JSON.parse(fs.readFileSync("./build/data/productsPreviews.json", "utf8"));
-data.footerSocialLinks = JSON.parse(fs.readFileSync("./build/data/footerSocialLinks.json", "utf8"));
-data.footerNav = JSON.parse(fs.readFileSync("./build/data/footerNav.json", "utf8"));
-data.footerPayments = JSON.parse(fs.readFileSync("./build/data/footerPayments.json", "utf8"));
+// data.nav = JSON.parse(fs.readFileSync("./build/data/nav.json", "utf8"));
+// data.productsPreviews = JSON.parse(fs.readFileSync("./build/data/productsPreviews.json", "utf8"));
+// data.footerSocialLinks = JSON.parse(fs.readFileSync("./build/data/footerSocialLinks.json", "utf8"));
+// data.footerNav = JSON.parse(fs.readFileSync("./build/data/footerNav.json", "utf8"));
+// data.footerPayments = JSON.parse(fs.readFileSync("./build/data/footerPayments.json", "utf8"));
 // const projectData = JSON.parse(fs.readFileSync("./build/data/projectData.json", "utf8"));
 const pagesData = {};
 
