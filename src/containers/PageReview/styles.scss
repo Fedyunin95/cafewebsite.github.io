@@ -67,7 +67,6 @@
         width: 100%;
         max-width: 330px;
         margin-bottom: 16px;
-        border-bottom: 1px solid #c5c5c5;
 
         &-field {
           width: 100%;
@@ -81,6 +80,11 @@
           font-weight: 300;
           line-height: 27px;
           font-family: $font-second;
+          border-bottom: 1px solid #c5c5c5;
+
+          &_error{
+            border-color: #ff2b2b;
+          }
 
           @include placeholders {
             color: #000;
@@ -106,6 +110,10 @@
           height: 68px;
           width: 494px;
           border: 1px solid #c5c5c5;
+
+          &.quest-review__form__input-field_error{
+            border-color: #ff2b2b;
+          }
         }
       }
 

@@ -1,0 +1,82 @@
+.politic {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 25px;
+  box-sizing: border-box;
+
+  @media all and (max-width: 768px) {
+    padding: 0 10px;
+  }
+
+  .title {
+    max-width: 100%;
+    width: 1200px;
+    margin: 0 auto 30px;
+    text-align: center;
+    font-weight: bold;
+
+    @media all and (max-width: 768px) {
+      font-size: 22px;
+    }
+  }
+
+  ol {
+    counter-reset: li;
+
+    li {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 0;
+      font-size: 16px;
+      line-height: 22px;
+
+      &:before {
+        counter-increment: li;
+        content: counters(li, ".") ". ";
+        display: inline;
+        margin-right: 5px;
+      }
+      p {
+        margin-bottom: 10px;
+        max-width: 95% ;
+
+        @media all and (max-width: 768px) {
+          max-width: 80%;
+        }
+      }
+    }
+
+    &.block {
+      .block__title {
+        display: flex;
+        margin-bottom: 15px;
+        font-weight: bold;
+        font-size: 18px;
+
+        @media all and (max-width: 768px) {
+          max-width: 70% ;
+        }
+      }
+
+      &__list {
+        li {
+          padding-left: 15px;
+        }
+      }
+    }
+  }
+
+  ul.block__sublist {
+      list-style: disc;
+      width: 100%;
+
+      li {
+        flex-wrap: nowrap;
+        &:before {
+          content: "●";
+          margin-right: 5px;
+          counter-increment: none;
+        }
+      }
+  }
+}

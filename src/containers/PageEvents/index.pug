@@ -18,30 +18,30 @@ block content
                 .calendar__months.js-months-swiper
                     -
                         var months = [
-                            "Январь",
-                            "Февраль",
-                            "Март",
-                            "Апрель",
-                            "Май",
-                            "Июнь",
-                            "Июль",
-                            "Август",
-                            "Сентябрь",
-                            "Октябрь",
-                            "Ноябрь",
-                            "Декабрь"
+                            {name: "Январь", class: "calendar__months__item_active"},
+                            {name: "Февраль", class: ""},
+                            {name: "Март", class: ""},
+                            {name: "Апрель", class: ""},
+                            {name:"Май", class:""},
+                            {name:"Июнь", class:""},
+                            {name:"Июль", class:""},
+                            {name:"Август", class:""},
+                            {name:"Сентябрь", class:""},
+                            {name:"Октябрь", class:""},
+                            {name:"Ноябрь", class:""},
+                            {name:"Декабрь", class:""}
                         ]
                     .swiper-wrapper
-                        each month in months
-                            .swiper-slide.calendar__months__item
-                                p.title= month
+                        each month, index in months
+                            .swiper-slide.calendar__months__item.js-month(class= " " + month.class data-month-count=(index + 1))
+                                p.title= month.name
                                 .border
                 .swiper-navigation
                     .swiper-button-next.js-next-month
                         svg
                             use(xlink:href= assetsDir + "images/sprite.symbol.svg#arrow_long")
-            .page-events__calendar-body
-                table.months
+            .page-events__calendar-body.js-table-wrap
+                table.months.js-table
                     -
                         var monthDays = [
                             [
@@ -199,13 +199,13 @@ block content
                         each week in monthDays
                             tr
                                 each day in week
-                                    td(class=day.className)
+                                    td.js-day(class=day.className)
                                         span=day.value
             p.page-events__calendar_vertical Мероприятия
-        .page-events__body
+        .page-events__body.js-events-body
             p.page-events__body-title
                 | СОБЫТИЯ НА ТЕКУЩИЮ НЕДЕЛЮ:
-            .page-events__body-cards
+            .page-events__body-cards.js-cards
                 -
                     var cards = [
                         {

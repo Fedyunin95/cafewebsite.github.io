@@ -9,8 +9,8 @@ function Contacts() {
     });
 
     const myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-      // iconLayout: "default#image",
-      iconImageHref: "/images/map-dot.svg",
+      iconLayout: "default#image",
+      iconImageHref: "../images/svg-icon/map-dot.svg",
       iconImageSize: [30, 42],
       iconImageOffset: [-5, -38]
     });

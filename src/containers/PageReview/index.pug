@@ -18,7 +18,7 @@ block content
                         span
                             | Вы можете  оставить отзыв о нашем кафе, оставьте свои контакты для связи с Вами
 
-                    form.quest-review__form.js-quest-review
+                    form.quest-review__form.js-quest-review(novalidate=true action='/')
                         -
                             var inputs = [
                                 {
@@ -31,6 +31,7 @@ block content
                                     placeholder: "Ваш телефон",
                                     type: "phone",
                                     name: "phone",
+                                    maxlength: "18",
                                     required: false
                                 },
                                 {
@@ -49,15 +50,17 @@ block content
                         each input in inputs
                             if input.type !== "textarea"
                                 .quest-review__form__input
-                                    input.quest-review__form__input-field(
+                                    input.quest-review__form__input-field.js-review-input(
                                         name= input.name
                                         placeholder= input.placeholder
                                         required= input.required
+                                        data-invalid-class="quest-review__form__input-field_error"
+                                        maxLength= input.maxlength
                                     )
                             else
                                 .quest-review__form__input.quest-review__form__input_textarea
                                     p.quest-review__form__input_textarea-title= input.placeholder
-                                    textarea.quest-review__form__input-field(name= input.name required= input.required)
+                                    textarea.quest-review__form__input-field.js-review-input(name= input.name required="true" data-invalid-class="quest-review__form__input-field_error")
                         button.quest-review__form__btn(type="submit")
                             span
                                 | Отправить

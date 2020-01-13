@@ -32,7 +32,7 @@ block content
             each image in images
                 .page-gallery__images-item(style="background-image: url('" + assetsDir + "images/" + image.img + ".png')")
                     img(src=assetsDir + "images/" + image.img + ".png", hidden)
-                    a.page-gallery__images-item__link(href=assetsDir + "/gallery-inside.html")
+                    a.page-gallery__images-item__link(href="/gallery-inside.html")
                         span= image.linkText
         .page-gallery__callback
             - var block = {class: "page-main__callback"}

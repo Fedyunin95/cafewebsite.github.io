@@ -2,10 +2,16 @@
   width: 100%;
   max-width: 1024px;
   margin: 0 auto 70px;
+  padding: 0 14px;
+  box-sizing: border-box;
+
+  @media all and (max-width: $laptop - 1) {
+  }
 
   &__header {
     width: 100%;
     margin-bottom: 25px;
+    overflow: hidden;
 
     &-title {
       position: relative;
@@ -24,6 +30,10 @@
         left: 0;
         top: -55px;
         z-index: -1;
+
+        @media all and (max-width: $tablet - 1) {
+          display: none;
+        }
       }
     }
   }
@@ -38,6 +48,10 @@
       max-width: 704px;
       margin: 0 auto;
 
+      @media all and (max-width: $mobileL - 1) {
+        flex-wrap: wrap;
+      }
+
       .calendar__year {
         color: #145e86;
         font-size: 48px;
@@ -47,6 +61,12 @@
 
       .calendar__months {
         overflow: hidden;
+
+        @media all and (max-width: $mobileL - 1) {
+          max-width: 92%;
+          height: 53px;
+          padding-left: 0;
+        }
 
         .swiper-wrapper {
           padding-left: 5px;
@@ -99,7 +119,7 @@
             border-radius: 50%;
           }
 
-          &.swiper-slide-active {
+          &_active {
             &:before {
               border: 1px solid #155f87;
             }
@@ -176,6 +196,10 @@
       font-size: 10px;
       font-weight: 300;
       letter-spacing: 0.6px;
+
+      @media all and (max-width: $tablet - 1) {
+        display: none;
+      }
     }
   }
 
@@ -190,18 +214,23 @@
       margin-bottom: 20px;
     }
     &-cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-column-gap: 53px;
+      grid-row-gap: 45px;
+
+      @media all and (max-width: $tablet - 1) {
+        grid-template-columns: auto auto;
+      }
+
+      @media all and (max-width: $mobileL - 1) {
+        grid-template-columns: auto;
+        grid-column-gap: 0;
+        grid-row-gap: 30px;
+      }
 
       .card {
         width: 100%;
-        max-width: 29%;
-        margin-bottom: 45px;
-
-        &:not(:nth-child(3n)) {
-          margin-right: 55px;
-        }
 
         &__image {
           width: 100%;
@@ -246,7 +275,8 @@
             z-index: 1;
             position: absolute;
             top: 103px;
-            left: 45px;
+            left: 50%;
+            transform: translateX(-50%);
           }
         }
 

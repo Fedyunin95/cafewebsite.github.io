@@ -28,7 +28,7 @@
                         svg
                             use(xlink:href=assetsDir + "images/sprite.symbol.svg#arrow")
             .phone
-                input.phone__input(type="phone" placeholder="Ваш телефон")
+                input.phone__input.js-phone(type="phone" placeholder="Ваш телефон" maxlength="18")
                 button.button.callback__submit(type="submit")
                     span
                         | Отправить

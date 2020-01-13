@@ -9,6 +9,7 @@ import About from "../containers/PageAbout/main";
 import Gallery from "../containers/PageGalleryInside/main";
 import Menu from "../containers/PageMenu/main";
 import Events from "../containers/PageEvents/main";
+import PageReview from "../containers/PageReview/main";
 
 document.addEventListener("DOMContentLoaded", () => {
   svg4everybody();
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const pageEvents = document.querySelector(".js-page-events");
   const rollup = document.querySelector(".js-rollup");
   const popup = document.querySelector(".js-popup");
+  const pageReview = document.querySelector(".js-page-review");
 
   new Header(headerBlock);
 
@@ -60,5 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (popup) {
     new Popup(popup);
+  }
+
+  if (pageReview) {
+    new PageReview(pageReview);
   }
 });

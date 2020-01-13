@@ -1,6 +1,14 @@
+import PhoneMask from "../../scripts/partials/phoneMask";
+
 function Callback(callback) {
   //  found all inputs wrappers in callback block
   const timeInputs = callback.querySelectorAll(".js-callback-input");
+  const phoneInput = callback.querySelector(".js-phone");
+
+  phoneInput.addEventListener("input", event => {
+    const inputFiled = event.target;
+    inputFiled.value = PhoneMask(inputFiled);
+  });
 
   for (let i = 0, len = timeInputs.length; i < len; i++) {
     // initialize incriment and decriment buttons

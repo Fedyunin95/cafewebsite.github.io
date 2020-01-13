@@ -45,6 +45,10 @@
 
   &__body {
     padding: 0 50px 70px;
+    
+    @media all and (max-width: $mobileL - 1) {
+      padding: 0 10px 43px;
+    }
   }
 
   &__wrapper {
@@ -52,6 +56,12 @@
     max-width: 570px;
     position: relative;
     background-color: #fff;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    @media all and (max-width: $tablet - 1) {
+      width: calc(100% - 28px);
+    }
   }
 
   &__image {
@@ -100,7 +110,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media all and (max-width: $mobileL - 1) {
+      flex-direction: column;
     }
+  }
 
     &__btn {
       height: 56px;
@@ -133,6 +147,12 @@
         background-color: #3b3b3b;
         color: #fff;
 
+        @media all and (max-width: $mobileL - 1) {
+          width: 100%;
+          max-width: unset;
+          margin-bottom: 15px;
+        }
+
         &:after {
           background-color: #fff;
         }
@@ -154,6 +174,11 @@
         background-color: #fff;
         border-color: #145e86;
         color: #145e86;
+
+        @media all and (max-width: $mobileL - 1) {
+          width: 100%;
+          max-width: unset;
+        }
 
         &:after {
           background-color: #145e86;
