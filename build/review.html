@@ -53,7 +53,7 @@
   <body>
     <script src="assets/scripts/main.min.js"></script>
     <div class="wrapper">
-      <header class="header js-header  header_black">
+      <header class="header js-header  ">
         <div class="header__menu-btn js-header-open">
           <button class="menu__btn_open"><span></span></button><span class="tirle">Меню</span>
         </div>
@@ -61,11 +61,11 @@
           <div class="header__menu__wrapper">
             <button class="header__menu__btn_close js-header-close"><span class="text">Закрыть</span><span class="icon"><span class="first"></span><span class="last"></span></span></button>
             <ul class="list">
-              <li class="list__item js-list-item"><a class="list__item__link" href="menu.html">Меню</a></li>
-              <li class="list__item js-list-item"><a class="list__item__link" href="about.html">О нас</a></li>
-              <li class="list__item js-list-item"><a class="list__item__link" href="events.html">Мероприятия</a></li>
-              <li class="list__item js-list-item"><a class="list__item__link" href="review.html">Отзывы</a></li>
-              <li class="list__item js-list-item"><a class="list__item__link" href="contacts.html">Контакты</a></li>
+              <li class="list__item js-list-item" data-image-num="0"><a class="list__item__link" href="menu.html">Меню</a></li>
+              <li class="list__item js-list-item" data-image-num="1"><a class="list__item__link" href="about.html">О нас</a></li>
+              <li class="list__item js-list-item" data-image-num="2"><a class="list__item__link" href="events.html">Мероприятия</a></li>
+              <li class="list__item js-list-item" data-image-num="3"><a class="list__item__link" href="review.html">Отзывы</a></li>
+              <li class="list__item js-list-item" data-image-num="4"><a class="list__item__link" href="contacts.html">Контакты</a></li>
             </ul><a class="button header__btn" href="/">Забронировать</a>
             <div class="header__contacts">
               <div class="contact"><span class="title">Адрес</span><span class="info">г.Черняховск, ул. Калининградская, 5, ТЦ &quot;Радуга&quot;</span>
@@ -77,11 +77,11 @@
             </div>
           </div>
           <div class="header__menu__images">
-            <div class="image-slide js-list-item-bg" style="background-image: url(images/headerBG1.png)"><img src="images/headerBG1.png" hidden></div>
-            <div class="image-slide js-list-item-bg" style="background-image: url(images/headerBG2.png)"><img src="images/headerBG2.png" hidden></div>
-            <div class="image-slide js-list-item-bg" style="background-image: url(images/headerBG1.png)"><img src="images/headerBG1.png" hidden></div>
-            <div class="image-slide js-list-item-bg" style="background-image: url(images/headerBG2.png)"><img src="images/headerBG2.png" hidden></div>
-            <div class="image-slide js-list-item-bg" style="background-image: url(images/headerBG1.png)"><img src="images/headerBG1.png" hidden></div>
+            <div class="image-slide js-list-item-bg image-slide_active" style="background-image: url(images/headerBG1.png)"><img src="images/[object Object]" hidden></div>
+            <div class="image-slide js-list-item-bg" style="background-image: url(images/headerBG2.png)"><img src="images/[object Object]" hidden></div>
+            <div class="image-slide js-list-item-bg" style="background-image: url(images/headerBG1.png)"><img src="images/[object Object]" hidden></div>
+            <div class="image-slide js-list-item-bg" style="background-image: url(images/headerBG2.png)"><img src="images/[object Object]" hidden></div>
+            <div class="image-slide js-list-item-bg" style="background-image: url(images/headerBG1.png)"><img src="images/[object Object]" hidden></div>
           </div>
         </div><a class="header__logo logo" href="main.html">
           <div class="header__logo__icon logo__icon"></div>
@@ -94,19 +94,19 @@
               <div class="quest-review__header__half">
                 <h3 class="quest-review__title"><span class="quest-review__title-background">Отзывы</span><span class="quest-review__title-text">Отзывы</span></h3>
                 <p class="quest-review__subtitle"><span>Вы можете  оставить отзыв о нашем кафе, оставьте свои контакты для связи с Вами</span></p>
-                <form class="quest-review__form js-quest-review">
+                <form class="quest-review__form js-quest-review" novalidate action="/">
                   <div class="quest-review__form__input">
-                    <input class="quest-review__form__input-field" name="name" placeholder="Ваше имя" required>
+                    <input class="quest-review__form__input-field js-review-input" name="name" placeholder="Ваше имя" required data-invalid-class="quest-review__form__input-field_error">
                   </div>
                   <div class="quest-review__form__input">
-                    <input class="quest-review__form__input-field" name="phone" placeholder="Ваш телефон">
+                    <input class="quest-review__form__input-field js-review-input" name="phone" placeholder="Ваш телефон" data-invalid-class="quest-review__form__input-field_error" maxLength="18">
                   </div>
                   <div class="quest-review__form__input">
-                    <input class="quest-review__form__input-field" name="email" placeholder="Ваш E-mail" required>
+                    <input class="quest-review__form__input-field js-review-input" name="email" placeholder="Ваш E-mail" required data-invalid-class="quest-review__form__input-field_error">
                   </div>
                   <div class="quest-review__form__input quest-review__form__input_textarea">
                     <p class="quest-review__form__input_textarea-title">Ваш отзыв</p>
-                    <textarea class="quest-review__form__input-field" name="review" required></textarea>
+                    <textarea class="quest-review__form__input-field js-review-input" name="review" required="true" data-invalid-class="quest-review__form__input-field_error"></textarea>
                   </div>
                   <button class="quest-review__form__btn" type="submit"><span>Отправить</span></button>
                 </form>
@@ -189,7 +189,7 @@
                       </div>
                     </div>
                     <div class="phone">
-                      <input class="phone__input" type="phone" placeholder="Ваш телефон">
+                      <input class="phone__input js-phone" type="phone" placeholder="Ваш телефон" maxlength="18">
                       <button class="button callback__submit" type="submit"><span>Отправить</span></button>
                     </div>
                   </div>
@@ -208,7 +208,7 @@
       </main>
       <footer class="footer">
         <div class="footer__wrapper">
-          <div class="footer__nav-block"><a class="footer__logo logo" href="/">
+          <div class="footer__nav-block"><a class="footer__logo logo" href="main.html">
               <div class="header__logo__icon logo__icon"></div>
               <p class="header__logo__text logo__text">Leto</p></a>
             <ul class="footer__nav">
